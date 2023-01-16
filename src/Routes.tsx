@@ -9,7 +9,6 @@ import { fetchContent } from "@/contentful";
 import { AnyEntry } from '@/types';
 
 const NotFound = lazy(() => import('@/views/NotFound'));
-const Registration = lazy(() => import('@/views/Registration'));
 
 type Router = {
     path: string;
@@ -19,7 +18,6 @@ type Router = {
 export const Routes = () => {
     const routes: Router[] = [
         { path: '/', element: <Content /> },
-        { path: '/registration', element: <Registration /> },
         { path: '/:slug', element: <Content /> },
         { path: '/:type/:slug', element: <Content /> },
     ]

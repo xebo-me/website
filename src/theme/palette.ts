@@ -1,32 +1,32 @@
-export const palette = {
+export const palette: object = {
     primary: {
-        main: '#374146'
+        main: '#54b5e6',
+        contrastText: '#ffffff',
     },
     secondary: {
-        main: '#447ec5'
-    },
-    error: {
-        main: '#D80000'
-    },
-    warning: {
-        main: '#F96E32'
-    },
-    info: {
-        main: '#ffffff'
-    },
-    success: {
-        main: '#1DA090'
-    },
-    text: {
-        primary: '#374146',
-        secondary: '#606D7C',
-        disabled: '#D1D3D8',
-        hint: '#D1D3D8'
+        main: '#e7eff8'
     },
     background: {
         default: '#ffffff',
         paper: '#e7eff8'
     },
+    text: {
+        primary: '#374146',
+        secondary: '#606d7c',
+        disabled: '#d1d3d8',
+    },
+    error: {
+        main: '#d80000'
+    },
+    warning: {
+        main: '#f96e32'
+    },
+    info: {
+        main: '#ffffff'
+    },
+    success: {
+        main: '#1da090'
+    }
 };
 
 export default palette;

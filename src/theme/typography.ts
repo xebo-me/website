@@ -1,8 +1,7 @@
-export const typography = {
+export const typography: object = {
     fontFamily: "'Inter', sans-serif",
     fontSize: 16,
     root: {},
-
     h1: {
         fontWeight: 700,
         fontSize: '3.5rem',
@@ -60,8 +59,8 @@ export const typography = {
     button: {
         fontWeight: 600,
         fontSize: '0.875rem',
-        letterSpacing: '0.014em'
-        // textTransform: 'none'
+        letterSpacing: '0.014em',
+        textTransform: 'capitalize'
     },
     caption: {
         fontWeight: 400,
