@@ -3,6 +3,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import { Entry } from "contentful";
 
+import Contact from './Contact';
 import HeroBanner from './HeroBanner';
 import Section from './Section';
 import Outline from '@/components/Outline';
@@ -43,7 +44,7 @@ const Renderer = (props: ContentProps<AnyEntry>) => {
                 :
                 <Factory contentEntry={contentEntry} detail={true} />
             }
-
+            <Contact />
         </Box>
     )
 }
