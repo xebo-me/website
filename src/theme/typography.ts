@@ -60,7 +60,7 @@ export const typography: object = {
         fontWeight: 600,
         fontSize: '0.875rem',
         letterSpacing: '0.014em',
-        textTransform: 'capitalize'
+        textTransform: 'none'
     },
     caption: {
         fontWeight: 400,
