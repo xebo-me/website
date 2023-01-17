@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 
+import Box from '@mui/material/Box';
+
 import Footer from './Footer';
 import Header from './Header';
 
@@ -17,7 +19,9 @@ const Viewport = (props: ViewportProps) => {
     return (
         <>
             <Header />
-            {children}
+            <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+                {children}
+            </Box>
             <Footer />
         </>
     )

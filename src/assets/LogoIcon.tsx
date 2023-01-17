@@ -3,7 +3,6 @@ import * as React from 'react';
 import SvgIcon from '@mui/material/SvgIcon';
 
 export const LogoIcon = () => {
-    // style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
     return (
         <SvgIcon viewBox='0 0 725 200' width="290" height="80" sx={{ shapeRendering: 'geometricPrecision' }} >
             <path fill="#ffffff" d="M 713.5,2.5 C 728.167,2.5 742.833,2.5 757.5,2.5C 757.333,77.5007 757.5,152.501 758,227.5C 764.174,275.323 788.674,310.157 831.5,332C 880.614,352.777 926.614,347.443 969.5,316C 1009.31,281.241 1024.48,237.741 1015,185.5C 1004.9,145.732 981.732,116.232 945.5,97C 898.658,76.3951 853.991,80.2284 811.5,108.5C 800.681,98.1809 790.014,87.6809 779.5,77C 826.723,41.8886 878.723,31.5553 935.5,46C 1004.14,68.3033 1045.64,114.803 1060,185.5C 1069.31,261.356 1042.48,320.522 979.5,363C 929.207,392.066 876.54,396.4 821.5,376C 770.554,353.944 736.721,316.444 720,263.5C 717.229,252.978 715.229,242.311 714,231.5C 713.5,155.167 713.333,78.8341 713.5,2.5 Z" />
