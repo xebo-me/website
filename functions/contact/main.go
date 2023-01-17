@@ -40,7 +40,6 @@ func (p Person) addContact() {
 		fmt.Println(err)
 	} else {
 		log.Println(response.Body)
-
 	}
 }
 

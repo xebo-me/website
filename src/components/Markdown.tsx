@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 
 const Markdown: Record<string, unknown> = {
     a: ({ ...props }) => <Link target="_blank"  {...props} />,
-    p: ({ ...props }) => <Typography sx={{ lineHeight: 1.75 }} paragraph align="justify" variant="body1" {...props} />,
+    p: ({ ...props }) => <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="justify" variant="body1" {...props} />,
     hr: ({ ...props }) => <Divider sx={{ my: 2 }} {...props} />,
     div: ({ ...props }) => <Stack justifyContent="center" alignItems="center" direction="row" {...props} />,
 }

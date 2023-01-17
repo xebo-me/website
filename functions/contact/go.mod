@@ -1,4 +1,4 @@
-module github.com/credibil/credibil-website/functions/contact
+module github.com/xebo/website/functions/contact
 
 go 1.19
 
