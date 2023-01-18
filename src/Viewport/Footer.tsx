@@ -29,10 +29,10 @@ export const Footer = () => {
                 </IconButton>
             </Box >
             <Stack alignItems="center" spacing={2}>
-                <Typography align="center" color="grayText" variant="body2">
+                <Typography align="center" color="inherit" variant="body2">
                     {`All content © copyright  ${date} ${import.meta.env.VITE_APP_NAME}.`}
                 </Typography >
-                <Typography align="center" color="grayText" variant="body2">
+                <Typography align="center" color="inherit" variant="body2">
                     All rights reserved.
                 </Typography>
             </Stack>

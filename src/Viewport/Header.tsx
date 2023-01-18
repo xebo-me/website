@@ -13,7 +13,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Entry, EntryCollection } from "contentful";
 import { useNavigate } from "react-router-dom";
 
-import logo from '../assets/logo-blue.svg';
+import logo from '@/assets/logo-white.svg';
 import { fetchContent } from "@/contentful";
 import type { MenuEntry, MenuItemEntry } from '@/types';
 
@@ -35,8 +35,9 @@ export const Header = () => {
     };
 
     return (
-        <AppBar color="transparent" position="static" elevation={0}>
+        <AppBar color="primary" position="static" elevation={0}>
             <Toolbar >
+
                 <Box sx={{ flexGrow: 1 }}>
                     <Link onClick={() => navigate('/')} component="button" sx={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }} underline="none" color="inherit">
                         <Box component="img" src={logo} alt="logo" sx={{ height: 25 }} />
@@ -63,7 +64,7 @@ export const Header = () => {
                         </Menu>
                     </Box>
                 }
-                <Button variant="contained" color="primary" onClick={() => navigate('/registration')}>Create Account</Button>
+                <Button variant="contained" color="secondary" onClick={() => navigate('/registration')}>Request demo</Button>
             </Toolbar>
         </AppBar>
     )
