@@ -70,7 +70,7 @@ const Registration = () => {
         dispatch({ type: name, value: value });
     }
 
-    const message = {
+    const message: Record<string, string> = {
         header: !submitted ? "Request a demo of xebo" : `Request sent successfully`,
         body: !submitted ? "Find out more about Xebo by signing up to use our interractive demo." : "Thank you for your registration. We have emailed you a link to our demo.",
     }
@@ -92,19 +92,14 @@ const Registration = () => {
                 }
             </Stack>
             {!submitted &&
-                <>
+                <Stack sx={{ my: 2 }} spacing={2}>
                     <TextField
                         fullWidth label="Full Name" type="text" variant="outlined" name="name"
                         onChange={handleChange}
-                        sx={{ marginTop: 2 }}
                     />
                     <TextField
                         fullWidth required={true} label="Email" variant="outlined" name="email"
-                        onChange={handleChange}
-                        helperText={state.errors.email}
-                        error={state.errors.email ? true : false}
-                        sx={{ marginTop: 2 }}
-
+                        onChange={handleChange} helperText={state.errors.email} error={state.errors.email ? true : false}
                     />
                     <LoadingButton
                         loading={submitting}
@@ -112,12 +107,10 @@ const Registration = () => {
                         fullWidth
                         size="large"
                         variant="contained"
-                        onClick={handleSubmit}
-                        sx={{ marginTop: 2 }}
-                    >
+                        onClick={handleSubmit} >
                         Send request
                     </LoadingButton>
-                </>
+                </Stack>
             }
         </Container>
 
