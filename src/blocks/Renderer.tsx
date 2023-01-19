@@ -16,7 +16,7 @@ const blocks: Record<string, React.FC<ContentProps<any>>> = {
     'heroBanner': HeroBanner
 };
 
-// individual entry
+
 const Factory = (props: ContentProps<AnyEntry>) => {
     const { contentEntry, detail } = props;
     const name = contentEntry?.sys.contentType.sys.id;
