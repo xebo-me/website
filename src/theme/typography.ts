@@ -1,3 +1,4 @@
+
 export const typography: object = {
     fontFamily: "'Inter', sans-serif",
     fontSize: 16,
@@ -6,6 +7,7 @@ export const typography: object = {
         fontWeight: 700,
         fontSize: '3.5rem',
         lineHeight: 1.2,
+        fontFamily: 'BarlowSemiBold',
     },
     h2: {
         fontWeight: 800,
@@ -41,10 +43,11 @@ export const typography: object = {
         letterSpacing: '0.0286em',
     },
     subtitle2: {
-        fontWeight: 400,
+        fontWeight: 900,
         fontSize: '1.5rem',
         lineHeight: 1.333,
         letterSpacing: '0.0167em',
+        fontFamily: 'InterThin',
     },
     body1: {
         fontWeight: 400,

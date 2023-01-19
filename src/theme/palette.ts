@@ -4,7 +4,8 @@ export const palette: object = {
         contrastText: '#ffffff',
     },
     secondary: {
-        main: '#e7eff8'
+        main: '#E2A071'
+        //  #162F3C   #E2A071 #B3E271
     },
     background: {
         default: '#ffffff',
