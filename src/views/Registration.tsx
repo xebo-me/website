@@ -75,11 +75,10 @@ const Registration = () => {
         body: !submitted ? "Find out more about Xebo by signing up to use our interractive demo." : "Thank you for your registration. We have emailed you a link to our demo.",
     }
 
-
     return (
         <Container component={Paper} elevation={1} sx={{ my: 10, p: 2, backgroundColor: 'background.default' }} maxWidth="sm">
             <Stack alignItems="center" spacing={2} >
-                <Box component="img" src={logo} alt="logo" sx={{ height: 25 }} />
+                <Box component="img" src={logo} alt="logo" sx={{ height: 40 }} />
                 <Typography variant="h3" >{message.header}</Typography>
                 <Typography align="center">{message.body}</Typography>
                 {submitted &&

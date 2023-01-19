@@ -22,6 +22,8 @@ type Register struct {
 	Email string `json:"email"`
 }
 
+// xebo protects perosnal information 
+
 func (reg Register) makeJWT() (string, error) {
 
 	now := time.Now()
@@ -54,7 +56,7 @@ func (reg Register) makeJWT() (string, error) {
 func (reg Register) sendEmail(tkn string) {
 	godotenv.Load(".env")
 
-	from := mail.NewEmail("Xebo", "info@xebo.me")
+	from := mail.NewEmail("Xebo", "info@credibil.io")
 	subject := "New demo link for " + reg.Name
 	to := mail.NewEmail(reg.Name, reg.Email)
 	msg := mail.NewV3MailInit(from, subject, to)
@@ -62,7 +64,7 @@ func (reg Register) sendEmail(tkn string) {
 	msg.SetTemplateID(tmpltId)
 
 	msg.Personalizations[0].SetDynamicTemplateData("Name", reg.Name)
-	msg.Personalizations[0].SetDynamicTemplateData("Link", "https://demo.credibil.io?jwt="+tkn)
+	msg.Personalizations[0].SetDynamicTemplateData("Link", "https://demo.credibil.io/financial/xebo?jwt="+tkn)
 
 	client := sendgrid.NewSendClient(os.Getenv("SENDGRID_API_KEY"))
 	response, err := client.Send(msg)

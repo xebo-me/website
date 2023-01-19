@@ -11,7 +11,7 @@ const HeroBanner = (props: ContentProps<HeroBannerEntry>) => {
     const { contentEntry } = props;
 
     return (
-        <Stack sx={{ pt: 12, backgroundColor: 'primary.main' }}>
+        <Stack sx={{ py: 12, backgroundColor: 'primary.dark' }}>
             <Container maxWidth="lg" sx={{ display: 'flex', flexDirection: 'column', alignItems: "center" }} >
                 <Typography color="background.default" textAlign="center" variant="h1" >
                     {contentEntry.fields.headline}

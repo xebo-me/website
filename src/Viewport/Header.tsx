@@ -35,9 +35,8 @@ export const Header = () => {
     };
 
     return (
-        <AppBar color="primary" position="static" elevation={0}>
+        <AppBar sx={{ backgroundColor: "primary.dark" }} position="static" elevation={0}>
             <Toolbar >
-
                 <Box sx={{ flexGrow: 1 }}>
                     <Link onClick={() => navigate('/')} component="button" sx={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }} underline="none" color="inherit">
                         <Box component="img" src={logo} alt="logo" sx={{ height: 25 }} />
@@ -64,7 +63,7 @@ export const Header = () => {
                         </Menu>
                     </Box>
                 }
-                <Button variant="contained" color="secondary" onClick={() => navigate('/registration')}>Request demo</Button>
+                <Button variant="contained" color="primary" onClick={() => navigate('/registration')}>Request demo</Button>
             </Toolbar>
         </AppBar>
     )
