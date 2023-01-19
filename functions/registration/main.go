@@ -22,7 +22,7 @@ type Register struct {
 	Email string `json:"email"`
 }
 
-// xebo protects perosnal information 
+// xebo protects perosnal information
 
 func (reg Register) makeJWT() (string, error) {
 
@@ -56,7 +56,7 @@ func (reg Register) makeJWT() (string, error) {
 func (reg Register) sendEmail(tkn string) {
 	godotenv.Load(".env")
 
-	from := mail.NewEmail("Xebo", "info@credibil.io")
+	from := mail.NewEmail("Xebo", "info@xebo.me")
 	subject := "New demo link for " + reg.Name
 	to := mail.NewEmail(reg.Name, reg.Email)
 	msg := mail.NewV3MailInit(from, subject, to)

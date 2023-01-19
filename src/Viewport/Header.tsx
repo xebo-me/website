@@ -35,7 +35,7 @@ export const Header = () => {
     };
 
     return (
-        <AppBar sx={{ backgroundColor: "primary.dark" }} position="static" elevation={0}>
+        <AppBar color="primary" position="static" elevation={0}>
             <Toolbar >
                 <Box sx={{ flexGrow: 1 }}>
                     <Link onClick={() => navigate('/')} component="button" sx={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }} underline="none" color="inherit">
