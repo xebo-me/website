@@ -18,7 +18,14 @@ const Center = (props: ContentProps<TextEntry>) => {
 
     return (
         <Grid container direction="column" justifyContent="center" alignItems="center" spacing={2}>
-            <Grid xs={6} sm={6} sx={{ mt: 8, mb: 5 }}>
+            <Grid xs={6} sm={8} sx={{ my: 4 }}>
+                {contentEntry.fields.headline &&
+                    <Typography align="center" variant="h2" sx={{ pt: { xs: 2, md: 4 } }}>
+                        {contentEntry.fields.headline}
+                    </Typography>
+                }
+            </Grid>
+            <Grid xs={6} sm={6} sx={{ mb: 6 }}>
                 {contentEntry.fields.image?.fields.file.url &&
                     <CardMedia
                         sx={{ width: '100%', height: 'auto' }}
@@ -26,13 +33,6 @@ const Center = (props: ContentProps<TextEntry>) => {
                         src={contentEntry.fields.image.fields.file.url}
                         alt={contentEntry.fields.image.fields.title}
                     />
-                }
-            </Grid>
-            <Grid xs={6} sm={8}>
-                {contentEntry.fields.headline &&
-                    <Typography align="center" variant="h2" sx={{ pt: { xs: 2, md: 4 }, my: 2 }}>
-                        {contentEntry.fields.headline}
-                    </Typography>
                 }
             </Grid>
             <Grid xs={6} sm={8} >
