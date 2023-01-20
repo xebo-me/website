@@ -11,17 +11,17 @@ const Left = (props: ContentProps<TextEntry>) => {
     const { contentEntry } = props;
 
     return (
-        <Container maxWidth="lg" sx={{ display: 'flex', flexDirection: 'row', alignItems: "center" }} >
-            <Grid container direction="row" spacing={4} sx={{ py: 6 }}>
-                <Grid item xs={12} sm={6} sx={{ mx: 10 }}>
-                    <Typography align="left" variant="h2"  sx={{ pb: 5 }}>
+        <Container maxWidth="xl" sx={{ display: 'flex', flexDirection: 'row', alignItems: "center" }} >
+            <Grid container direction="row" spacing={4} sx={{ py: 10, px: 10 }}>
+                <Grid item xs={12} sm={6} md={6}>
+                    <Typography align="left" variant="h2" sx={{ pb: 5 }}>
                         {contentEntry.fields.headline}
                     </Typography>
                     <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="left" variant="body1" >
                         {contentEntry.fields.body}
                     </Typography>
                 </Grid>
-                <Grid item xs={12} sm={6} md={6} lg={6}>
+                <Grid item xs={12} sm={6} md={6} sx={{ px: 10 }}>
                     {contentEntry.fields.image?.fields.file.url &&
                         <CardMedia
                             loading="lazy"
