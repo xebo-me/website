@@ -4,24 +4,22 @@ import CardMedia from '@mui/material/CardMedia';
 import Container from "@mui/material/Container";
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import ReactMarkdown from 'react-markdown';
 
-import Markdown from '@/components/Markdown';
 import type { ContentProps, TextEntry } from '@/types';
 
 const Left = (props: ContentProps<TextEntry>) => {
     const { contentEntry } = props;
-
+    console.log(contentEntry.fields)
     return (
         <Container maxWidth="lg" sx={{ display: 'flex', flexDirection: 'column', alignItems: "center" }} >
             <Grid container direction="row" spacing={4} sx={{ py: 6 }}>
-                <Grid item xs={12} sm={6} >
-                    <Typography variant="h2" >
+                <Grid item xs={12} sm={6} sx={{ mx: 10 }}>
+                    <Typography align="left" variant="h2"  sx={{ pb: 5 }}>
                         {contentEntry.fields.headline}
                     </Typography>
-                    <ReactMarkdown components={Markdown} >
+                    <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="left" variant="body1" >
                         {contentEntry.fields.body}
-                    </ReactMarkdown>
+                    </Typography>
                 </Grid>
                 <Grid item xs={12} sm={6} md={6} lg={6}>
                     {contentEntry.fields.image?.fields.file.url &&
