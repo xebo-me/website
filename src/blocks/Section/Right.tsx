@@ -11,13 +11,13 @@ const Right = (props: ContentProps<TextEntry>) => {
     const { contentEntry } = props;
 
     return (
-        <Container maxWidth="lg" sx={{ display: 'flex', flexDirection: 'column', alignItems: "center" }} >
+        <Container maxWidth="lg" sx={{ display: 'flex', flexDirection: 'row', alignItems: "center" }} >
         <Grid container direction="row-reverse" spacing={2} sx={{ py: 6 }}>
             <Grid item xs={12} sm={6} sx={{ mx: 10 }}>
-                <Typography align="right" variant="h2" sx={{ pb: 5 }}>
+                <Typography align="left" variant="h2" sx={{ pb: 5 }}>
                     {contentEntry.fields.headline}
                 </Typography>
-                <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="right" variant="body1" >
+                <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="left" variant="body1" >
                     {contentEntry.fields.body}
                 </Typography>
             </Grid>

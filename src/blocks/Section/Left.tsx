@@ -9,9 +9,9 @@ import type { ContentProps, TextEntry } from '@/types';
 
 const Left = (props: ContentProps<TextEntry>) => {
     const { contentEntry } = props;
-    console.log(contentEntry.fields)
+
     return (
-        <Container maxWidth="lg" sx={{ display: 'flex', flexDirection: 'column', alignItems: "center" }} >
+        <Container maxWidth="lg" sx={{ display: 'flex', flexDirection: 'row', alignItems: "center" }} >
             <Grid container direction="row" spacing={4} sx={{ py: 6 }}>
                 <Grid item xs={12} sm={6} sx={{ mx: 10 }}>
                     <Typography align="left" variant="h2"  sx={{ pb: 5 }}>
