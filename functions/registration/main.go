@@ -22,6 +22,8 @@ type Register struct {
 	Email string `json:"email"`
 }
 
+const emailTemplateID = "d-ac8dc0f776c0489aa3623145ac4c607f"
+
 // xebo protects perosnal information
 
 func (reg Register) makeJWT() (string, error) {
@@ -60,8 +62,8 @@ func (reg Register) sendEmail(tkn string) {
 	subject := "New demo link for " + reg.Name
 	to := mail.NewEmail(reg.Name, reg.Email)
 	msg := mail.NewV3MailInit(from, subject, to)
-	tmpltId := os.Getenv("EMAIL_TEMPLATE_ID")
-	msg.SetTemplateID(tmpltId)
+
+	msg.SetTemplateID(emailTemplateID)
 
 	msg.Personalizations[0].SetDynamicTemplateData("Name", reg.Name)
 	msg.Personalizations[0].SetDynamicTemplateData("Link", "https://demo.credibil.io/financial/xebo?jwt="+tkn)

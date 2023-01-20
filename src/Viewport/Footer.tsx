@@ -24,8 +24,8 @@ export const Footer = () => {
                         {item.title}
                     </Button>
                 )}
-                <IconButton size="small">
-                    <img width="45" alt="" src='https://shielded.co.nz/img/custom-logo.png' />
+                <IconButton size="small"  >
+                    <img width="45" height="45" alt="" src='https://shielded.co.nz/img/custom-logo.png' />
                 </IconButton>
             </Box >
             <Stack alignItems="center" spacing={2}>
@@ -36,7 +36,7 @@ export const Footer = () => {
                     All rights reserved.
                 </Typography>
             </Stack>
-        </Stack>
+        </Stack >
     )
 }
 
