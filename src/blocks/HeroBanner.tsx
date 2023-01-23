@@ -13,27 +13,29 @@ const HeroBanner = (props: ContentProps<HeroBannerEntry>) => {
     const { contentEntry } = props;
 
     return (
-        <Stack sx={{ py: 12 }}>
-            <Container maxWidth="lg" sx={{ display: 'flex', flexDirection: 'column', alignItems: "center" }} >
-                <Grid container direction="row" spacing={2} >
-                    <Grid justifyContent="space-between" container xs={12} sm={6}>
-                        <Stack>
-                            <Typography  gutterBottom variant="h1" >
-                                {contentEntry.fields.headline}
-                            </Typography>
-                            <Typography variant="subtitle2">
-                                {contentEntry?.fields.subheader}
-                            </Typography>
-                        </Stack>
-                    </Grid>
-                    <Grid xs={12} sm={6}>
-                        <CardMedia
-                            component="img" loading='lazy' image={contentEntry.fields.heroImage?.fields.file.url}
-                            alt={contentEntry.fields.heroImage?.fields.title} />
-                    </Grid>
+        <Container maxWidth="xl" sx={{ display: 'flex', flexDirection: 'row', alignItems: "center", px: { xs: 2, md: 10 } }}>
+            <Grid container direction="row" spacing={4} sx={{ py: 8 }}  >
+                <Grid xs={12} sm={12} md={6} lg={6}  >
+                    <Stack sx={{ display: "flex", alignItems: { xs: "center", md: "normal" } }} >
+                        <Typography gutterBottom variant="h1" >
+                            {contentEntry.fields.headline}
+                        </Typography>
+                        <Typography variant="subtitle2">
+                            {contentEntry?.fields.subheader}
+                        </Typography>
+                    </Stack>
                 </Grid>
-            </Container>
-        </Stack>
+                <Grid xs={12} sm={10} md={6} lg={6} sx={{ mx: { sm: 10, md: 0, lg: 0 } }}>
+                    <CardMedia
+                        loading="lazy"
+                        sx={{ width: "100%", height: 'auto' }}
+                        component="img"
+                        image={contentEntry.fields.heroImage?.fields.file.url}
+                        alt={contentEntry.fields.heroImage?.fields.title} />
+                </Grid>
+            </Grid>
+        </Container>
+
     )
 }
 export default HeroBanner;
