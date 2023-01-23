@@ -11,9 +11,9 @@ const Right = (props: ContentProps<TextEntry>) => {
     const { contentEntry } = props;
 
     return (
-        <Container maxWidth="xl" sx={{ display: 'flex', flexDirection: 'row', alignItems: "center", px: { xs: 2, md: 10 } }}>
-            <Grid container direction="row-reverse" spacing={4} sx={{ py: 8 }}>
-                <Grid item xs={12} md={6} sx={{ mx: { xs: 2, md: 0 } }} >
+        <Container maxWidth="xl" >
+            <Grid container direction="row-reverse" justifyContent="center" alignItems="center" spacing={4} sx={{ py: 8 }}>
+                <Grid xs={12} md={6} sx={{ mx: { xs: 2, md: 0 }, px: 4 }}>
                     <Typography align="left" variant="h2" sx={{ mb: 4 }}>
                         {contentEntry.fields.headline}
                     </Typography>
@@ -21,11 +21,11 @@ const Right = (props: ContentProps<TextEntry>) => {
                         {contentEntry.fields.body}
                     </Typography>
                 </Grid>
-                <Grid item xs={12} sm={10} md={6} sx={{ mx: { xs: 8, sm: 16, md: 0 }, px: { md: 15, lg: 20 } }}>
+                <Grid xs={12} sm={10} md={6} sx={{ pl: { xs: 25, lg: 40 }, pt: { xs: 10 } }}>
                     {contentEntry.fields.image?.fields.file.url &&
                         <CardMedia
                             loading="lazy"
-                            sx={{ width: "100%", height: 'auto' }}
+                            sx={{ width: "40%", height: 'auto' }}
                             component="img"
                             src={contentEntry.fields.image.fields.file.url}
                             alt={contentEntry.fields.image.fields.title}
