@@ -21,7 +21,7 @@ const Left = (props: ContentProps<TextEntry>) => {
                         {contentEntry.fields.body}
                     </Typography>
                 </Grid>
-                <Grid item xs={12} sm={10} md={6} lg={6} sx={{ mx: { sm: 10, md: 0, lg: 0 } }}>
+                <Grid item xs={12} sm={10} md={6} lg={6} sx={{ mx: { sm: 10, md: 0, lg: 0 }, m: { xs: 2 } }}>
                     {contentEntry.fields.image?.fields.file.url &&
                         <CardMedia
                             loading="lazy"
