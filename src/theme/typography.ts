@@ -43,11 +43,11 @@ export const typography: object = {
         letterSpacing: '0.0286em',
     },
     subtitle2: {
-        fontWeight: 900,
+        fontWeight: 100,
         fontSize: '1.5rem',
         lineHeight: 1.333,
         letterSpacing: '0.0167em',
-        fontFamily: 'InterThin',
+        fontFamily: 'sans-serif',
     },
     body1: {
         fontWeight: 400,
