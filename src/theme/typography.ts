@@ -47,7 +47,7 @@ export const typography: object = {
         fontSize: '1.5rem',
         lineHeight: 1.333,
         letterSpacing: '0.0167em',
-        fontFamily: 'sans-serif',
+        fontFamily: 'InterThin',
     },
     body1: {
         fontWeight: 400,
