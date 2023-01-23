@@ -18,14 +18,14 @@ const Center = (props: ContentProps<TextEntry>) => {
     return (
         <Container maxWidth="lg" sx={{ display: 'flex', flexDirection: 'column', alignItems: "center", px: { xs: 2, md: 10 } }} >
             <Grid container direction="column" justifyContent="center" alignItems="center" spacing={2}>
-                <Grid xs={12} sm={10} md={10} sx={{ my: 2 }}>
+                <Grid xs={12} sm={10} sx={{ my: 2 }}>
                     {contentEntry.fields.headline &&
                         <Typography align="center" variant="h2" sx={{ pt: { xs: 2, md: 4 } }}>
                             {contentEntry.fields.headline}
                         </Typography>
                     }
                 </Grid>
-                <Grid xs={12} sm={12} md={10} lg={10} sx={{ mt: { xs: 2, md: 4 }, p: { xs: 2 } }}>
+                <Grid xs={12} md={10} sx={{ mt: { xs: 2, md: 4 }, p: { xs: 2 } }}>
                     {contentEntry.fields.image?.fields.file.url &&
                         <CardMedia
                             sx={{ width: '100%', height: 'auto' }}
@@ -35,7 +35,7 @@ const Center = (props: ContentProps<TextEntry>) => {
                         />
                     }
                 </Grid>
-                <Grid xs={12} sm={12} md={10} lg={11} sx={{ p: { xs: 2, sm: 4 } }}>
+                <Grid xs={12} md={10} lg={11} sx={{ p: { xs: 2, sm: 4 } }}>
                     <Stack justifyContent="center" direction="column" alignItems="center" spacing={2} sx={{ pb: { xs: 2, md: 4 }, color: 'GrayText' }}>
                         <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="center" variant="body1" >
                             {contentEntry.fields.body}
@@ -48,7 +48,7 @@ const Center = (props: ContentProps<TextEntry>) => {
                     </Stack>
                 </Grid>
             </Grid>
-        </Container>
+        </Container >
     )
 }
 
