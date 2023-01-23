@@ -11,17 +11,17 @@ const Left = (props: ContentProps<TextEntry>) => {
     const { contentEntry } = props;
 
     return (
-        <Container maxWidth="xl" sx={{ display: 'flex', flexDirection: 'row', alignItems: "center", my: 8, py: 8 }} >
-            <Grid container direction="row" spacing={4} sx={{ px: 10 }}>
-                <Grid item xs={12} sm={6} md={6}>
-                    <Typography align="left" variant="h2" sx={{ pb: 5 }}>
+        <Container maxWidth="xl" sx={{ display: 'flex', flexDirection: 'row', alignItems: "center", p: { xs: 2, md: 10 } }}>
+            <Grid container direction="row" spacing={4} sx={{ py: 8 }}>
+                <Grid item xs={12} sm={12} md={6} lg={6} sx={{ mx: { xs: 2, md: 0, lg: 0 } }} >
+                    <Typography align="left" variant="h2" sx={{ mb: 4 }}>
                         {contentEntry.fields.headline}
                     </Typography>
-                    <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="left" variant="body1" >
+                    <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="left" variant="body1">
                         {contentEntry.fields.body}
                     </Typography>
                 </Grid>
-                <Grid item xs={12} sm={6} md={6} sx={{ px: 10 }}>
+                <Grid item xs={12} sm={10} md={6} lg={6} sx={{ mx: { sm: 10, md: 0, lg: 0 } }}>
                     {contentEntry.fields.image?.fields.file.url &&
                         <CardMedia
                             loading="lazy"
