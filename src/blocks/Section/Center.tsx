@@ -35,7 +35,7 @@ const Center = (props: ContentProps<TextEntry>) => {
                         />
                     }
                 </Grid>
-                <Grid xs={12} sm={12} md={10} lg={12} sx={{ p: { xs: 2, sm: 4 } }}>
+                <Grid xs={12} sm={12} md={10} lg={11} sx={{ p: { xs: 2, sm: 4 } }}>
                     <Stack justifyContent="center" direction="column" alignItems="center" spacing={2} sx={{ pb: { xs: 2, md: 4 }, color: 'GrayText' }}>
                         <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="center" variant="body1" >
                             {contentEntry.fields.body}
