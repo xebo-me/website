@@ -16,7 +16,7 @@ const Center = (props: ContentProps<TextEntry>) => {
     const navigate = useNavigate();
 
     return (
-        <Container maxWidth="lg" sx={{ display: 'flex', flexDirection: 'column', alignItems: "center", my: { xs: 4, md: 8 }, pb: 5 }} >
+        <Container maxWidth="lg" sx={{ display: 'flex', flexDirection: 'column', alignItems: "center", px: { xs: 2, md: 10 } }} >
             <Grid container direction="column" justifyContent="center" alignItems="center" spacing={2}>
                 <Grid xs={12} sm={10} md={10} sx={{ my: 2 }}>
                     {contentEntry.fields.headline &&

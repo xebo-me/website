@@ -23,12 +23,3 @@ export const fetchContent = async ({ queryKey }: QueryFunctionContext): Promise<
         include: include || 3
     });
 };
-
-// export const fetchMenu = async (): Promise<EntryCollection<unknown>> => {
-//     return client.getEntries({
-//         // eslint-disable-next-line camelcase
-//         content_type: 'assembly',
-//         'fields.slug': 'site-root',
-//         include: 1
-//     });
-// };
