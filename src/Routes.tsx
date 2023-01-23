@@ -10,6 +10,7 @@ import { AnyEntry } from '@/types';
 
 const NotFound = lazy(() => import('@/views/NotFound'));
 const Registration = lazy(() => import('@/views/Registration'));
+const Contact = lazy(() => import('@/views/Contact'));
 
 type Router = {
     path: string;
@@ -20,6 +21,7 @@ export const Routes = () => {
     const routes: Router[] = [
         { path: '/', element: <Content /> },
         { path: '/registration', element: <Registration /> },
+        { path: '/contact', element: <Contact /> },
         { path: '/:slug', element: <Content /> },
         { path: '/:type/:slug', element: <Content /> },
     ]

@@ -48,6 +48,7 @@ export const Header = () => {
                             {item.fields.name}
                         </Button>
                     )}
+                    <Button sx={{ mx: 1 }} color="inherit" onClick={() => navigate('/contact')}>Contact</Button>
                 </Box>
                 {menuItems && menuItems.length > 0 &&
                     <Box sx={{ display: { xs: 'flex', sm: 'none' } }}>
