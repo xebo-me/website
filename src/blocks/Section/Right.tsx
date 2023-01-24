@@ -21,7 +21,7 @@ const Right = (props: ContentProps<TextEntry>) => {
                         {contentEntry.fields.body}
                     </Typography>
                 </Grid>
-                <Grid xs={12} sm={10} md={6} sx={{ pl: { xs: 23, lg: 45 }, pt: { xs: 10 } }}>
+                <Grid xs={12} sm={10} md={6} sx={{ pl: { xs: 22, lg: 45 }, pt: { xs: 10 } }}>
                     {contentEntry.fields.image?.fields.file.url &&
                         <CardMedia
                             loading="lazy"
