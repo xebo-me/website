@@ -64,7 +64,7 @@ export const Header = () => {
                         </Menu>
                     </Box>
                 }
-                <Button variant="contained" onClick={() => navigate('/registration')}>Request demo</Button>
+                <Button variant="contained" sx={{ bgcolor: '#44b860' }} onClick={() => navigate('/registration')}>Request demo</Button>
             </Toolbar>
         </AppBar>
     )

@@ -13,7 +13,7 @@ export const Footer = () => {
     const date = new Date().getFullYear();
 
     return (
-        <Stack component="footer" sx={{ py: 6, bgcolor: 'background.paper' }} alignItems="center" justifyContent="center" spacing={2}>
+        <Stack component="footer" sx={{ py: 6, bgcolor: '#44b860' }} alignItems="center" justifyContent="center" spacing={2}>
             <Box component="footer" sx={{ display: 'flex', justifyContent: 'center' }}>
                 {array.map((item, i) =>
                     <Button key={i} sx={{ my: 2, mx: 0.5, color: 'text.primary' }}>
