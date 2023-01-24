@@ -13,19 +13,19 @@ export const Footer = () => {
     const date = new Date().getFullYear();
 
     return (
-        <Stack component="footer" sx={{ py: 6, bgcolor: '#44b860' }} alignItems="center" justifyContent="center" spacing={2}>
+        <Stack component="footer" sx={{ py: 6, bgcolor: 'primary.main' }} alignItems="center" justifyContent="center" spacing={2}>
             <Box component="footer" sx={{ display: 'flex', justifyContent: 'center' }}>
                 {array.map((item, i) =>
-                    <Button key={i} sx={{ my: 2, mx: 0.5, color: 'text.primary' }}>
+                    <Button key={i} sx={{ my: 2, mx: 0.5, color: 'primary.contrastText' }}>
                         {item.title}
                     </Button>
                 )}    
             </Box >
             <Stack alignItems="center" spacing={2}>
-                <Typography align="center" color="inherit" variant="body2">
+                <Typography align="center" color="primary.contrastText" variant="body2">
                     {`All content © copyright  ${date} ${import.meta.env.VITE_APP_NAME}.`}
                 </Typography >
-                <Typography align="center" color="inherit" variant="body2">
+                <Typography align="center" color="primary.contrastText" variant="body2">
                     All rights reserved.
                 </Typography>
             </Stack>
