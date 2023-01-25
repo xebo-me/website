@@ -16,7 +16,7 @@ const Center = (props: ContentProps<TextEntry>) => {
     const navigate = useNavigate();
 
     return (
-        <Container maxWidth="lg" sx={{ px: 4 }} >
+        <Container maxWidth="lg" sx={{ px: { xs: 4, md: 6 }, py: 6 }} >
             <Grid container direction="column" justifyContent="center" alignItems="center" spacing={2}>
                 <Grid xs={12} sm={10} sx={{ my: 2 }}>
                     {contentEntry.fields.headline &&
@@ -35,7 +35,7 @@ const Center = (props: ContentProps<TextEntry>) => {
                         />
                     }
                 </Grid>
-                <Grid xs={12}  sx={{ p: { xs: 2, sm: 4 } }}>
+                <Grid xs={12} sx={{ p: { xs: 2, sm: 4 } }}>
                     <Stack justifyContent="center" direction="column" alignItems="center" spacing={2} sx={{ pb: { xs: 2, md: 4 }, color: 'GrayText' }}>
                         <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="center" variant="body1" >
                             {contentEntry.fields.body}

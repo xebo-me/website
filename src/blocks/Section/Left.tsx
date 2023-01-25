@@ -14,7 +14,7 @@ const Left = (props: ContentProps<TextEntry>) => {
 
     return (
         <Container maxWidth="xl">
-            <Grid container direction="row" justifyContent="center" alignItems="center" spacing={4} sx={{ px: 4, py: 10 }}>
+            <Grid container direction="row" justifyContent="center" alignItems="center" spacing={4} sx={{ px: { xs: 4, md: 6 }, py: 6 }}>
                 <Grid xs={12} md={6}>
                     <Typography align="left" variant="h2" sx={{ mb: 4 }}>
                         {contentEntry.fields.headline}
