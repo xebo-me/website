@@ -13,9 +13,9 @@ const HeroBanner = (props: ContentProps<HeroBannerEntry>) => {
     const { contentEntry } = props;
 
     return (
-        <Container maxWidth="xl" sx={{ display: 'flex', flexDirection: 'row', alignItems: "center", px: { xs: 2, md: 10 } }}>
+        <Container maxWidth="xl" sx={{ display: 'flex', flexDirection: 'row', alignItems: "center", px: 4 }}>
             <Grid container direction="row" spacing={4} sx={{ py: 8 }}  >
-                <Grid xs={12} sm={12} md={6} lg={6}  >
+                <Grid xs={12} lg={6}  >
                     <Stack sx={{ display: "flex", alignItems: { xs: "center", md: "normal" } }} >
                         <Typography gutterBottom variant="h1" >
                             {contentEntry.fields.headline}
@@ -25,7 +25,7 @@ const HeroBanner = (props: ContentProps<HeroBannerEntry>) => {
                         </Typography>
                     </Stack>
                 </Grid>
-                <Grid xs={12} sm={10} md={6} lg={6} sx={{ mx: { sm: 10, md: 0, lg: 0 } }}>
+                <Grid xs={12} lg={6} sx={{ mx: { sm: 10, md: 0 } }}>
                     <CardMedia
                         loading="lazy"
                         sx={{ width: "100%", height: 'auto' }}
