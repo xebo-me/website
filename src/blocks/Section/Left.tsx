@@ -41,5 +41,3 @@ const Left = (props: ContentProps<TextEntry>) => {
     )
 }
 export default Left;
-
-// sx={{ maxWidth: { xs: 'calc(100% - 200)', sm: 'calc(100% - 250px)', md: 'calc(100% - 150px)', lg: 'calc(100% - 200px)' }, height: 'auto' }}
