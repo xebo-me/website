@@ -27,7 +27,7 @@ const Right = (props: ContentProps<TextEntry>) => {
                         {contentEntry.fields.image?.fields.file.url &&
                             <CardMedia
                                 loading="lazy"
-                                sx={{ objectFit: 'contain', maxWidth: '50%', width: 'calc(80vh / 50%)', height: 'auto' }}
+                                sx={{ objectFit: 'contain', maxWidth: '80%', width: 'calc(80vh / 50%)', height: 'auto' }}
                                 component="img"
                                 src={contentEntry.fields.image.fields.file.url}
                                 alt={contentEntry.fields.image.fields.title}
