@@ -15,7 +15,7 @@ const Right = (props: ContentProps<TextEntry>) => {
     return (
         <Container maxWidth="xl">
             <Grid container direction="row-reverse" justifyContent="center" alignItems="center" spacing={4} sx={{ px: 4, py: 10 }}>
-                <Grid xs={12} md={6} lg={6}>
+                <Grid xs={12} md={6}>
                     <Typography align="left" variant="h2" sx={{ mb: 4 }}>
                         {contentEntry.fields.headline}
                     </Typography>
@@ -23,7 +23,7 @@ const Right = (props: ContentProps<TextEntry>) => {
                         {contentEntry.fields.body}
                     </Typography>
                 </Grid>
-                <Grid xs={12} md={6} lg={6}>
+                <Grid xs={12} md={6}>
                     <Box display="flex" justifyContent="center" alignItems="center">
                         {contentEntry.fields.image?.fields.file.url &&
                             <CardMedia
