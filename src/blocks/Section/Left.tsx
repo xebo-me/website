@@ -11,7 +11,7 @@ import type { ContentProps, TextEntry } from '@/types';
 
 const Left = (props: ContentProps<TextEntry>) => {
     const { contentEntry } = props;
-    console.log("LICENCE", contentEntry.fields.image?.fields.file)
+
     return (
         <Container maxWidth="xl">
             <Grid container direction="row" justifyContent="center" alignItems="center" spacing={4} sx={{ px: 4, py: 10 }}>
