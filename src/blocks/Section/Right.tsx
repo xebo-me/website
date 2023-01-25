@@ -13,20 +13,7 @@ const Right = (props: ContentProps<TextEntry>) => {
 
     return (
         <Container maxWidth="xl">
-            <Grid container justifyContent="center" alignItems="center" spacing={4} sx={{ px: 4, py: 10 }}>
-                <Grid xs={12} md={6}>
-                    <Box display="flex" justifyContent="flex-start" >
-                        {contentEntry.fields.image?.fields.file.url &&
-                            <CardMedia
-                                loading="lazy"
-                                sx={{ objectFit: 'contain', maxWidth: '80%', width: 'calc(80vh / 50%)', height: 'auto' }}
-                                component="img"
-                                src={contentEntry.fields.image.fields.file.url}
-                                alt={contentEntry.fields.image.fields.title}
-                            />
-                        }
-                    </Box>
-                </Grid>
+            <Grid container direction="row-reverse" justifyContent="center" alignItems="center" spacing={4} sx={{ px: 4, py: 10 }}>
                 <Grid xs={12} md={6}>
                     <Typography align="left" variant="h2" sx={{ mb: 4 }}>
                         {contentEntry.fields.headline}
@@ -35,9 +22,21 @@ const Right = (props: ContentProps<TextEntry>) => {
                         {contentEntry.fields.body}
                     </Typography>
                 </Grid>
-
+                <Grid xs={12} md={6}>
+                    <Box display="flex" justifyContent="center" alignItems="center">
+                        {contentEntry.fields.image?.fields.file.url &&
+                            <CardMedia
+                                loading="lazy"
+                                sx={{ objectFit: 'contain', maxWidth: '80%', width: 'calc(80vh / 50%)', height: 'auto', mt: 5 }}
+                                component="img"
+                                src={contentEntry.fields.image.fields.file.url}
+                                alt={contentEntry.fields.image.fields.title}
+                            />
+                        }
+                    </Box>
+                </Grid>
             </Grid >
-        </Container >
+        </Container>
     )
 }
 export default Right;
