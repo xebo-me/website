@@ -8,9 +8,10 @@ import Grid from '@mui/material/Unstable_Grid2';
 
 import type { ContentProps, TextEntry } from '@/types';
 
+
 const Left = (props: ContentProps<TextEntry>) => {
     const { contentEntry } = props;
-
+    console.log("LICENCE", contentEntry.fields.image?.fields.file)
     return (
         <Container maxWidth="xl">
             <Grid container direction="row" justifyContent="center" alignItems="center" spacing={4} sx={{ px: 4, py: 10 }}>
@@ -27,7 +28,7 @@ const Left = (props: ContentProps<TextEntry>) => {
                         {contentEntry.fields.image?.fields.file.url &&
                             <CardMedia
                                 loading="lazy"
-                                sx={{ maxWidth: 'calc(100vh - 50%)', height: 'auto', mt: 5 }}
+                                sx={{ objectFit: 'contain', maxWidth: '80%', width: 'calc(80vh / 50%)', height: 'auto', mt: 5 }}
                                 component="img"
                                 src={contentEntry.fields.image.fields.file.url}
                                 alt={contentEntry.fields.image.fields.title}

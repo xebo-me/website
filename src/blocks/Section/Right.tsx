@@ -11,6 +11,7 @@ import type { ContentProps, TextEntry } from '@/types';
 const Right = (props: ContentProps<TextEntry>) => {
     const { contentEntry } = props;
 
+    console.log("MOBILE", contentEntry.fields.image?.fields.file)
     return (
         <Container maxWidth="xl">
             <Grid container direction="row-reverse" justifyContent="center" alignItems="center" spacing={4} sx={{ px: 4, py: 10 }}>
@@ -27,7 +28,7 @@ const Right = (props: ContentProps<TextEntry>) => {
                         {contentEntry.fields.image?.fields.file.url &&
                             <CardMedia
                                 loading="lazy"
-                            sx={{ width: { xs: 'calc(50vh - 50%)', sm: 'calc(70vh - 50%)', md: 'calc(70vh - 50%)' }, height: 'auto' }}
+                                sx={{ objectFit: 'contain', maxWidth: '50%', width: 'calc(80vh / 50%)', height: 'auto' }}
                                 component="img"
                                 src={contentEntry.fields.image.fields.file.url}
                                 alt={contentEntry.fields.image.fields.title}
