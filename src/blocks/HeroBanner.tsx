@@ -16,10 +16,10 @@ const HeroBanner = (props: ContentProps<HeroBannerEntry>) => {
     const navigate = useNavigate();
 
     return (
-        <Container maxWidth="lg" sx={{ pt: 4, pb: {xs: 8, md: 12}, px: 2 }}>
-            <Grid container direction="row" justifyContent="center" alignItems="center">
+        <Container maxWidth="lg" sx={{ pt: 4, pb: { xs: 8, md: 18 }, px: 6 }}>
+            <Grid container direction="row" justifyContent="center" alignItems="flex-start">
                 <Grid xs={12} sm={6} md={6} >
-                    <Stack direction="column" justifyContent="center" alignItems="flwx-start">
+                    <Stack direction="column" justifyContent="center" alignItems="flex-start">
                         <Typography gutterBottom variant="h1" sx={{ textAlign: { xs: 'center', sm: 'left', md: 'left' } }}>
                             {contentEntry.fields.headline}
                         </Typography>
@@ -27,12 +27,13 @@ const HeroBanner = (props: ContentProps<HeroBannerEntry>) => {
                             {contentEntry?.fields.subheader}
                         </Typography>
                     </Stack>
-                    <Box sx={{ display: 'flex', justifyContent: { xs: 'center', sm:'left', md: 'left' }, alignItems: 'center', py: 2 }}>
-                        <Button color="secondary" variant="contained" onClick={() => navigate('/registration')}>Request demo</Button>
-                    </Box>
+                    <Stack direction="row" sx={{ display: 'flex', justifyContent: { xs: 'center', sm: 'left', md: 'left' }, alignItems: 'center', py: 2 }} spacing={4}>
+                        <Button color="secondary" variant="contained" sx={{ maxWidth: 140 }} onClick={() => navigate('/registration')}>Request Demo</Button>
+                        {/* <Button color="secondary" variant="outlined" sx={{ width: 140 }} onClick={() => navigate('/contact')}>Talk with us</Button> */}
+                    </Stack>
                 </Grid>
                 <Grid xs={12} sm={6} md={6}>
-                    <Box sx={{ display: {xs: 'none', sm: 'flex'}, justifyContent: 'center', alignItems: 'center', }}>
+                    <Box sx={{ display: { xs: 'none', sm: 'flex' }, justifyContent: 'center', alignItems: 'center', }}>
                         <CardMedia
                             loading="lazy"
                             sx={{ maxWidth: 'calc(50vh - 20%)', height: 'auto' }}
@@ -46,5 +47,3 @@ const HeroBanner = (props: ContentProps<HeroBannerEntry>) => {
     )
 }
 export default HeroBanner;
-
-// 
