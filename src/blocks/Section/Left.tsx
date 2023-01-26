@@ -24,7 +24,7 @@ const Left = (props: ContentProps<TextEntry>) => {
                     </Typography>
                 </Grid>
                 <Grid xs={12} md={6}>
-                    <Box display="flex" justifyContent="center" alignItems="center">
+                    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                         {contentEntry.fields.image?.fields.file.url &&
                             <CardMedia
                                 loading="lazy"
