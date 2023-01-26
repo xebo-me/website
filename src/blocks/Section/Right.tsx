@@ -12,7 +12,7 @@ const Right = (props: ContentProps<TextEntry>) => {
     const { contentEntry } = props;
 
     return (
-        <Container maxWidth="lg" sx={{ px: { xs: 4, sm: 6 }, py: 6 }}>
+        <Container maxWidth="md" sx={{ px: { xs: 4, sm: 6 }, py: 6 }}>
             <Grid container direction="row-reverse" justifyContent="center" alignItems="center" spacing={4} >
                 <Grid xs={12} md={6}>
                     <Typography align="left" variant="h2" sx={{ mb: 4 }}>
@@ -27,7 +27,7 @@ const Right = (props: ContentProps<TextEntry>) => {
                         {contentEntry.fields.image?.fields.file.url &&
                             <CardMedia
                                 loading="lazy"
-                                sx={{ objectFit: 'contain', maxWidth: '80%', width: 'calc(80vh / 50%)', height: 'auto', mt: 5 }}
+                            sx={{ objectFit: 'contain', maxWidth: { xs: '50%', md: '80%' }, width: 'calc(80vh / 50%)', height: 'auto', mt: 5 }}
                                 component="img"
                                 src={contentEntry.fields.image.fields.file.url}
                                 alt={contentEntry.fields.image.fields.title}
