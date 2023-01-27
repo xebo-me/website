@@ -17,7 +17,7 @@ const Center = (props: ContentProps<TextEntry>) => {
 
     return (
         <>
-            <Container maxWidth="lg" sx={{ px: { xs: 4, sm: 6 }, py: 6 }}>
+            <Container maxWidth="lg" sx={{ px: { xs: 4, sm: 6 } }}>
                 <Grid container direction="column" justifyContent="center" alignItems="center" spacing={2}>
                     <Grid xs={12} md={10}>
                         {contentEntry.fields.headline &&
@@ -38,11 +38,14 @@ const Center = (props: ContentProps<TextEntry>) => {
                     </Grid>
                 </Grid>
             </Container >
-            <Container maxWidth="xl" sx={{ px: { xs: 4, sm: 6 } }}>
+            <Container maxWidth="lg" sx={{ px: { xs: 4, sm: 6 }, pb: 8 }}>
                 <Grid container direction="row" justifyContent="center" alignItems="center" spacing={5}>
-                    <Grid xs={12} md={4}>
+                    <Grid xs={10} sm={6} md={4}>
+                        <Typography color="blac" sx={{ lineHeight: 1.75, fontWeight: 900 }} paragraph align="left" variant="body1" >
+                            Issuer
+                        </Typography>
                         <Stack direction="row" justifyContent="center" alignItems="center" spacing={2} sx={{ pb: { xs: 2, md: 4 }, color: 'GrayText' }}>
-                            <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="center" variant="body1" >
+                            <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="left" variant="body1" >
                                 {contentEntry.fields.body}
                             </Typography>
                             {contentEntry.fields.ctaLabel &&
@@ -52,9 +55,12 @@ const Center = (props: ContentProps<TextEntry>) => {
                             }
                         </Stack>
                     </Grid>
-                    <Grid xs={12} md={4}>
+                    <Grid xs={10} sm={8} md={4 }>
+                        <Typography sx={{ lineHeight: 1.75, fontWeight: 900 }} paragraph align="left" variant="body1" >
+                            Holder
+                        </Typography>
                         <Stack direction="row" justifyContent="center" alignItems="center" spacing={2} sx={{ pb: { xs: 2, md: 4 }, color: 'GrayText' }}>
-                            <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="center" variant="body1" >
+                            <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="left" variant="body1" >
                                 {contentEntry.fields.body}
                             </Typography>
                             {contentEntry.fields.ctaLabel &&
@@ -64,6 +70,21 @@ const Center = (props: ContentProps<TextEntry>) => {
                             }
                         </Stack>
                     </Grid>
+                    {/* <Grid xs={10} sm={8} md={4}>
+                        <Typography sx={{ lineHeight: 1.75, fontWeight: 900 }} paragraph align="left" variant="body1" >
+                            Verifier
+                        </Typography>
+                        <Stack direction="row" justifyContent="center" alignItems="center" spacing={2} sx={{ pb: { xs: 2, md: 4 }, color: 'GrayText' }}>
+                            <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="left" variant="body1" >
+                                {contentEntry.fields.body}
+                            </Typography>
+                            {contentEntry.fields.ctaLabel &&
+                                <Button onClick={() => navigate(contentEntry.fields.ctaSlug)} variant="contained" sx={{ mt: 4, mb: 4 }}>
+                                    {contentEntry.fields.ctaLabel}
+                                </Button>
+                            }
+                        </Stack>
+                    </Grid> */}
                 </Grid>
             </Container>
         </>
