@@ -16,7 +16,7 @@ const HeroBanner = (props: ContentProps<HeroBannerEntry>) => {
     const navigate = useNavigate();
 
     return (
-        <Container maxWidth="lg" sx={{ pt: 4, pb: { xs: 8, md: 18 }, px: 6 }}>
+        <Container maxWidth="lg" sx={{ pt: 4, pb: { xs: 12, md: 18 }, px: 6 }}>
             <Grid container direction="row" justifyContent="center" alignItems="flex-start">
                 <Grid xs={12} sm={6} md={6} >
                     <Stack direction="column" justifyContent="center" alignItems="flex-start">
