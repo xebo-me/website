@@ -11,28 +11,30 @@ import type { ContentProps, TextEntry } from '@/types';
 const Right = (props: ContentProps<TextEntry>) => {
     const { contentEntry } = props;
 
+
     return (
-        <Container maxWidth="md" sx={{ px: { xs: 4, sm: 6 }, py: 6 }}>
-            <Grid container direction="row-reverse" justifyContent="center" alignItems="center" spacing={4} >
-                <Grid xs={12} md={6}>
-                    <Typography align="left" variant="h2" sx={{ mb: 4 }}>
+        <Container maxWidth="lg" sx={{ py: 6 }}>
+            <Grid container direction="column" justifyContent="center" alignItems="center" spacing={2} sx={{ px: 4 }}>
+                <Grid xs={12} md={8}>
+                    <Typography align="left" variant="h3" sx={{ py: 4, display: { xs: 'flex', md: 'none'} }}>
                         {contentEntry.fields.headline}
                     </Typography>
-                    <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="left" variant="body1">
-                        {contentEntry.fields.body}
-                    </Typography>
-                </Grid>
-                <Grid xs={12} md={6}>
-                    <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                    <Box sx={{ justifyContent: 'left', alignItems: 'left' }}>
                         {contentEntry.fields.image?.fields.file.url &&
                             <CardMedia
                                 loading="lazy"
-                            sx={{ objectFit: 'contain', maxWidth: { xs: '50%', md: '80%' }, width: 'calc(80vh / 50%)', height: 'auto', mt: 5 }}
+                            sx={{ objectFit: 'contain', maxWidth: '50%', float: 'left', shapeOutside: 'padding-box' }}
                                 component="img"
                                 src={contentEntry.fields.image.fields.file.url}
                                 alt={contentEntry.fields.image.fields.title}
                             />
                         }
+                        <Typography variant="h3" sx={{ py: 4, display: { xs: 'none', md: 'flex' }, textAlign: {xs: 'left', md: 'right'} }}>
+                            {contentEntry.fields.headline}
+                        </Typography>
+                        <Typography color="grayText" align='right' sx={{ lineHeight: 1.75 }} variant="body1">
+                            {contentEntry.fields.body}
+                        </Typography>
                     </Box>
                 </Grid>
             </Grid >
