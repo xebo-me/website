@@ -27,13 +27,13 @@ const HeroBanner = (props: ContentProps<HeroBannerEntry>) => {
                             {contentEntry?.fields.subheader}
                         </Typography>
                     </Stack>
-                    <Stack direction="row" sx={{ display: 'flex', justifyContent: { xs: 'center', sm: 'left', md: 'left' }, alignItems: 'center', py: 2 }} spacing={4}>
-                        <Button color="secondary" variant="contained" sx={{ maxWidth: 140 }} onClick={() => navigate('/registration')}>Request Demo</Button>
-                        {/* <Button color="secondary" variant="outlined" sx={{ width: 140 }} onClick={() => navigate('/contact')}>Talk with us</Button> */}
+                    <Stack direction="row" sx={{ display: 'flex', justifyContent: { xs: 'center', sm: 'left', md: 'left' }, alignItems: 'center', py: 2 }} spacing={2}>
+                        <Button color="secondary" variant="contained" onClick={() => navigate('/registration')}>Request Demo</Button>
+                        <Button color="secondary" variant="outlined" onClick={() => navigate('/contact')}>Talk with us</Button>
                     </Stack>
                 </Grid>
                 <Grid xs={12} sm={6} md={6}>
-                    <Box sx={{ display: { xs: 'none', sm: 'flex' }, justifyContent: 'center', alignItems: 'center', }}>
+                    <Box sx={{ display: { xs: 'none', sm: 'flex' }, justifyContent: 'center', alignItems: 'center', pt: 5 }}>
                         <CardMedia
                             loading="lazy"
                             sx={{ maxWidth: 'calc(50vh - 20%)', height: 'auto' }}
