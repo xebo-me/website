@@ -13,6 +13,8 @@ export type HeroBannerEntry = {
     headline: string;
     subheader: string;
     heroImage: Asset;
+    containedButton: string;
+    outlinedButton: string;
 };
 
 export type TextEntry = {

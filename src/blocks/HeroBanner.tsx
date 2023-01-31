@@ -28,8 +28,12 @@ const HeroBanner = (props: ContentProps<HeroBannerEntry>) => {
                         </Typography>
                     </Stack>
                     <Stack direction="row" sx={{ display: 'flex', justifyContent: { xs: 'center', sm: 'left', md: 'left' }, alignItems: 'center', py: 2 }} spacing={2}>
-                        <Button color="secondary" variant="contained" onClick={() => navigate('/registration')}>Request Demo</Button>
-                        <Button color="secondary" variant="outlined" onClick={() => navigate('/contact')}>Talk with us</Button>
+                        {contentEntry.fields.containedButton &&
+                            <Button color="secondary" variant="contained" onClick={() => navigate('/registration')}>{contentEntry.fields.containedButton}</Button>
+                        }
+                        {contentEntry.fields.outlinedButton &&
+                            <Button color="secondary" variant="outlined" onClick={() => navigate('/contact')}>{contentEntry.fields.outlinedButton}</Button>
+                        }
                     </Stack>
                 </Grid>
                 <Grid xs={12} sm={6} md={6}>
