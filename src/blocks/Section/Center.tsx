@@ -18,7 +18,7 @@ const Center = (props: ContentProps<TextEntry>) => {
     return (
         <>
             <Container maxWidth="lg" sx={{ px: { xs: 4, sm: 6 } }}>
-                <Grid container direction="column" justifyContent="center" alignItems="center" spacing={2}>
+                <Grid container direction="column" justifyContent="space-around" alignItems="center" spacing={2}>
                     <Grid xs={12} md={10}>
                         {contentEntry.fields.headline &&
                             <Typography align="center" variant="h2" >
@@ -36,57 +36,77 @@ const Center = (props: ContentProps<TextEntry>) => {
                             />
                         }
                     </Grid>
+                    <Grid xs={12} md={12}>
+                        <Grid container direction="row" justifyContent="center" alignItems="flex-start" >
+                            <Grid xs={12} md={6}>
+                                <Typography color="black" sx={{ lineHeight: 1.75, fontWeight: 900 }} paragraph align="left" variant="body1" >
+                                    Issuer
+                                </Typography>
+                                <Stack direction="row" justifyContent="center" alignItems="center" spacing={2} sx={{ color: 'GrayText' }}>
+                                    <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="left" variant="body1" >
+                                        The Xebo Network is a security-first identity system for flexible authentication, authorization, federation, and user management for mobile apps, web apps, and any cloud service.
+                                        The Xebo Network is a security-first identity system for flexible authentication, authorization, federation, and user management for mobile apps, web apps, and any cloud service.
+                                    </Typography>
+                                    {contentEntry.fields.ctaLabel &&
+                                        <Button onClick={() => navigate(contentEntry.fields.ctaSlug)} variant="contained" sx={{ mt: 4, mb: 4 }}>
+                                            {contentEntry.fields.ctaLabel}
+                                        </Button>
+                                    }
+                                </Stack>
+                            </Grid>
+                            {/* 4 grid section */}
+                            <Grid xs={12} md={6}>
+                                <Container maxWidth="sm" >
+                                    <Grid container direction="row" justifyContent="center" alignItems="flex-start" spacing={4}>
+                                        <Grid xs={12} md={6}>
+                                            <Typography sx={{ lineHeight: 1.75, fontWeight: 900 }} paragraph align="left" variant="body1" >
+                                                Box 1
+                                            </Typography>
+                                            <Stack direction="row" justifyContent="center" alignItems="center" spacing={2} sx={{ pb: { xs: 2, md: 4 }, color: 'GrayText' }}>
+                                                <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="left" variant="body1" >
+                                                    Authenticate, authorize, federate, and manage identities in a secure distributed network infrastructure.
+                                                </Typography>
+                                            </Stack>
+                                        </Grid>
+                                        <Grid xs={12} md={6}>
+                                            <Typography sx={{ lineHeight: 1.75, fontWeight: 900 }} paragraph align="left" variant="body1" >
+                                                Box 2
+                                            </Typography>
+                                            <Stack direction="row" justifyContent="center" alignItems="center" spacing={2} sx={{ pb: { xs: 2, md: 4 }, color: 'GrayText' }}>
+                                                <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="left" variant="body1" >
+                                                    Authenticate, authorize, federate, and manage identities in a secure distributed network infrastructure.
+                                                </Typography>
+                                            </Stack>
+                                        </Grid>
+                                        <Grid xs={12} md={6}>
+                                            <Typography sx={{ lineHeight: 1.75, fontWeight: 900 }} paragraph align="left" variant="body1" >
+                                                Box 3
+                                            </Typography>
+                                            <Stack direction="row" justifyContent="center" alignItems="center" spacing={2} sx={{ pb: { xs: 2, md: 4 }, color: 'GrayText' }}>
+                                                <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="left" variant="body1" >
+                                                    Authenticate, authorize, federate, and manage identities in a secure distributed network infrastructure.
+                                                </Typography>
+
+                                            </Stack>
+                                        </Grid>
+                                        <Grid xs={12} md={6}>
+                                            <Typography sx={{ lineHeight: 1.75, fontWeight: 900 }} paragraph align="left" variant="body1" >
+                                                Box 4
+                                            </Typography>
+                                            <Stack direction="row" justifyContent="center" alignItems="center" spacing={2} sx={{ pb: { xs: 2, md: 4 }, color: 'GrayText' }}>
+                                                <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="left" variant="body1" >
+                                                    Authenticate, authorize, federate, and manage identities in a secure distributed network infrastructure.
+                                                </Typography>
+
+                                            </Stack>
+                                        </Grid>
+                                    </Grid>
+                                </Container>
+                            </Grid>
+                        </Grid>
+                    </Grid>
                 </Grid>
             </Container >
-            <Container maxWidth="lg" sx={{ px: { xs: 4, sm: 6 }, pb: 8 }}>
-                <Grid container direction="row" justifyContent="center" alignItems="center" spacing={5}>
-                    <Grid xs={10} sm={6} md={4}>
-                        <Typography color="blac" sx={{ lineHeight: 1.75, fontWeight: 900 }} paragraph align="left" variant="body1" >
-                            Issuer
-                        </Typography>
-                        <Stack direction="row" justifyContent="center" alignItems="center" spacing={2} sx={{ pb: { xs: 2, md: 4 }, color: 'GrayText' }}>
-                            <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="left" variant="body1" >
-                                {contentEntry.fields.body}
-                            </Typography>
-                            {contentEntry.fields.ctaLabel &&
-                                <Button onClick={() => navigate(contentEntry.fields.ctaSlug)} variant="contained" sx={{ mt: 4, mb: 4 }}>
-                                    {contentEntry.fields.ctaLabel}
-                                </Button>
-                            }
-                        </Stack>
-                    </Grid>
-                    <Grid xs={10} sm={8} md={4 }>
-                        <Typography sx={{ lineHeight: 1.75, fontWeight: 900 }} paragraph align="left" variant="body1" >
-                            Holder
-                        </Typography>
-                        <Stack direction="row" justifyContent="center" alignItems="center" spacing={2} sx={{ pb: { xs: 2, md: 4 }, color: 'GrayText' }}>
-                            <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="left" variant="body1" >
-                                {contentEntry.fields.body}
-                            </Typography>
-                            {contentEntry.fields.ctaLabel &&
-                                <Button onClick={() => navigate(contentEntry.fields.ctaSlug)} variant="contained" sx={{ mt: 4, mb: 4 }}>
-                                    {contentEntry.fields.ctaLabel}
-                                </Button>
-                            }
-                        </Stack>
-                    </Grid>
-                    {/* <Grid xs={10} sm={8} md={4}>
-                        <Typography sx={{ lineHeight: 1.75, fontWeight: 900 }} paragraph align="left" variant="body1" >
-                            Verifier
-                        </Typography>
-                        <Stack direction="row" justifyContent="center" alignItems="center" spacing={2} sx={{ pb: { xs: 2, md: 4 }, color: 'GrayText' }}>
-                            <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph align="left" variant="body1" >
-                                {contentEntry.fields.body}
-                            </Typography>
-                            {contentEntry.fields.ctaLabel &&
-                                <Button onClick={() => navigate(contentEntry.fields.ctaSlug)} variant="contained" sx={{ mt: 4, mb: 4 }}>
-                                    {contentEntry.fields.ctaLabel}
-                                </Button>
-                            }
-                        </Stack>
-                    </Grid> */}
-                </Grid>
-            </Container>
         </>
     )
 
