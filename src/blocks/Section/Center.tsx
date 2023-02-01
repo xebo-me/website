@@ -37,16 +37,28 @@ const Center = (props: ContentProps<TextEntry>) => {
                             />
                         }
                     </Grid>
+                    < Grid xs={12} md={4} >
+                        <Stack direction="column" >
+                            <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph variant="body1" >
+                                {contentEntry.fields.body}
+                            </Typography>
+                            {contentEntry.fields.ctaLabel &&
+                                <Button onClick={() => navigate(contentEntry.fields.ctaSlug)} variant="contained" sx={{ mt: 4, mb: 4 }}>
+                                    {contentEntry.fields.ctaLabel}
+                                </Button>
+                            }
+                        </Stack>
+                    </Grid>
                     <Grid xs={12} md={12}>
                         <Container maxWidth="md">
-                            <Grid container direction="row" justifyContent="center" alignItems="flex-start" spacing={6} sx={{ px: { xs: 4, md: 0 } }}>
+                            <Grid container direction="row" spacing={8} sx={{ px: { xs: 4, md: 0 } }}>
                                 < Grid xs={12} md={4} >
                                     <Stack direction="column" >
                                         <Typography sx={{ lineHeight: 1.75, fontWeight: 900 }} variant="body1" >
-                                            {contentEntry.fields.leftColumnTitle}
+                                            {contentEntry.fields.column.fields.leftColumnTitle}
                                         </Typography>
                                         <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph variant="body1" >
-                                            {contentEntry.fields.leftColumn}
+                                            {contentEntry.fields.column.fields.leftColumn}
                                         </Typography>
                                         {contentEntry.fields.ctaLabel &&
                                             <Button onClick={() => navigate(contentEntry.fields.ctaSlug)} variant="contained" sx={{ mt: 4, mb: 4 }}>
@@ -58,10 +70,10 @@ const Center = (props: ContentProps<TextEntry>) => {
                                 <Grid xs={12} md={4}>
                                     <Stack direction="column">
                                         <Typography sx={{ lineHeight: 1.75, fontWeight: 900 }} variant="body1" >
-                                            {contentEntry.fields.centerColumnTitle}
+                                            {contentEntry.fields.column.fields.centerColumnTitle}
                                         </Typography>
                                         <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph variant="body1" >
-                                            {contentEntry.fields.centerColumn}
+                                            {contentEntry.fields.column.fields.centerColumn}
                                         </Typography>
                                         {contentEntry.fields.ctaLabel &&
                                             <Button onClick={() => navigate(contentEntry.fields.ctaSlug)} variant="contained" sx={{ mt: 4, mb: 4 }}>
@@ -73,10 +85,10 @@ const Center = (props: ContentProps<TextEntry>) => {
                                 <Grid xs={12} md={4}>
                                     <Stack direction="column">
                                         <Typography sx={{ lineHeight: 1.75, fontWeight: 900 }} variant="body1" >
-                                            {contentEntry.fields.rightColumnTitle}
+                                            {contentEntry.fields.column.fields.rightColumnTitle}
                                         </Typography>
                                         <Typography color="grayText" sx={{ lineHeight: 1.75 }} paragraph variant="body1" >
-                                            {contentEntry.fields.rightColumn}
+                                            {contentEntry.fields.column.fields.rightColumn}
                                         </Typography>
                                         {contentEntry.fields.ctaLabel &&
                                             <Button onClick={() => navigate(contentEntry.fields.ctaSlug)} variant="contained" sx={{ mt: 4, mb: 4 }}>

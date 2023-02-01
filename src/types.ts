@@ -17,16 +17,21 @@ export type HeroBannerEntry = {
     outlinedButton: string;
 };
 
-export type TextEntry = {
-    ctaLabel: string;
-    ctaSlug: string;
+export type Column = {
+    name: string;
     leftColumnTitle: string;
     leftColumn: string;
     centerColumnTitle: string;
     centerColumn: string;
     rightColumnTitle: string;
     rightColumn: string;
+}
+
+export type TextEntry = {
+    ctaLabel: string;
+    ctaSlug: string;
     body: string;
+    column: Entry<Column>;
     image: Asset;
     headline: string;
     textDirection: string;
