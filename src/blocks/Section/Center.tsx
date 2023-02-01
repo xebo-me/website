@@ -51,7 +51,7 @@ const Center = (props: ContentProps<TextEntry>) => {
                     </Grid>
                     <Grid xs={12} md={12}>
                         <Container maxWidth="md">
-                            <Grid container direction="row" spacing={8} sx={{ px: { xs: 4, md: 0 } }}>
+                            <Grid container direction="row" spacing={6} sx={{ mx: 1}}>
                                 < Grid xs={12} md={4} >
                                     <Stack direction="column" >
                                         <Typography sx={{ lineHeight: 1.75, fontWeight: 900 }} variant="body1" >
