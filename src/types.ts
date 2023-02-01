@@ -20,6 +20,12 @@ export type HeroBannerEntry = {
 export type TextEntry = {
     ctaLabel: string;
     ctaSlug: string;
+    leftColumnTitle: string;
+    leftColumn: string;
+    centerColumnTitle: string;
+    centerColumn: string;
+    rightColumnTitle: string;
+    rightColumn: string;
     body: string;
     image: Asset;
     headline: string;
