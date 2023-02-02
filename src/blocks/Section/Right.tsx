@@ -11,7 +11,6 @@ import type { ContentProps, TextEntry } from '@/types';
 const Right = (props: ContentProps<TextEntry>) => {
     const { contentEntry } = props;
 
-
     return (
         <Container maxWidth="lg" sx={{ py: 6 }}>
             <Grid container direction="column" justifyContent="center" alignItems="center" spacing={2} sx={{ px: 4 }}>
