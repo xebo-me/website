@@ -49,11 +49,12 @@ const Center = (props: ContentProps<TextEntry>) => {
                             }
                         </Stack>
                     </Grid>
+                    {/* Grid Column starts here */}
                     <Grid xs={12} md={12}>
                         <Container maxWidth="md">
                             <Grid container direction="row" justifyContent="space-around" alignItems="flex-start" spacing={6}>
                                 {contentEntry.fields.column.fields.columnImage?.fields.file.url &&
-                                    <Grid xs={12} md={12} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                    <Grid xs={12} md={12} sx={{ display: { xs: 'flex', sm: 'none' }, justifyContent: 'center', alignItems: 'center' }}>
                                         <CardMedia
                                             sx={{ maxWidth: '50%', height: 'auto' }}
                                             component="img"
