@@ -19,6 +19,7 @@ export type HeroBannerEntry = {
 
 export type Column = {
     name: string;
+    columnImage: Asset;
     leftColumnTitle: string;
     leftColumn: string;
     centerColumnTitle: string;
