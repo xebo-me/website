@@ -17,7 +17,7 @@ const Center = (props: ContentProps<TextEntry>) => {
     const navigate = useNavigate();
 
     return (
-        <Box sx={{ mt: 8, mb: 10 }}>
+        <Box sx={{ mt: 4, mb: 10 }}>
             <Container maxWidth="lg" sx={{ px: { xs: 4, sm: 6 } }}>
                 <Grid container direction="row-reverse" justifyContent="space-around" alignItems="center" spacing={2}>
                     <Grid xs={12} md={12}>
@@ -51,18 +51,18 @@ const Center = (props: ContentProps<TextEntry>) => {
                     </Grid>
                     <Grid xs={12} md={12}>
                         <Container maxWidth="md">
-                            <Grid container direction="row" spacing={6} sx={{ mx: 1 }}>
+                            <Grid container direction="row" justifyContent="space-around" alignItems="flex-start" spacing={6}>
                                 {contentEntry.fields.column.fields.columnImage?.fields.file.url &&
                                     <Grid xs={12} md={12} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                         <CardMedia
-                                            sx={{ maxWidth: '40%', height: 'auto' }}
+                                            sx={{ maxWidth: '50%', height: 'auto' }}
                                             component="img"
                                             src={contentEntry.fields.column.fields.columnImage?.fields.file.url}
                                             alt={contentEntry.fields.column.fields.columnImage?.fields.file.url}
                                         />
                                     </Grid>
                                 }
-                                < Grid xs={12} md={4} >
+                                <Grid xs={12} md={4} >
                                     <Stack direction="column" >
                                         <Typography sx={{ lineHeight: 1.75, fontWeight: 900 }} variant="body1" >
                                             {contentEntry.fields.column?.fields.leftColumnTitle}
