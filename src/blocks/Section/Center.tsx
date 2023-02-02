@@ -61,7 +61,7 @@ const Center = (props: ContentProps<TextEntry>) => {
                                     />
                                 </Grid>
                             }
-                            <Grid xs={12} md={4} >
+                            <Grid xs={10} md={4} >
                                 <Stack direction="column" >
                                     <Typography sx={{ lineHeight: 1.75, fontWeight: 900 }} variant="body1" >
                                         {contentEntry.fields.column?.fields.leftColumnTitle}
@@ -76,7 +76,7 @@ const Center = (props: ContentProps<TextEntry>) => {
                                     }
                                 </Stack>
                             </Grid>
-                            <Grid xs={12} md={4}>
+                            <Grid xs={10} md={4}>
                                 <Stack direction="column">
                                     <Typography sx={{ lineHeight: 1.75, fontWeight: 900 }} variant="body1" >
                                         {contentEntry.fields.column?.fields.centerColumnTitle}
@@ -91,7 +91,7 @@ const Center = (props: ContentProps<TextEntry>) => {
                                     }
                                 </Stack>
                             </Grid>
-                            <Grid xs={12} md={4}>
+                            <Grid xs={10} md={4}>
                                 <Stack direction="column">
                                     <Typography sx={{ lineHeight: 1.75, fontWeight: 900 }} variant="body1" >
                                         {contentEntry.fields.column?.fields.rightColumnTitle}
