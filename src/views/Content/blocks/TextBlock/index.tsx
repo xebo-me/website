@@ -8,10 +8,12 @@ import type { ContentProps, TextEntry } from '@/types';
 export const TextBlock = (props: ContentProps<TextEntry>) => {
     const { contentEntry } = props;
 
+    // console.log(contentEntry.fields.layout)
+
     switch (contentEntry.fields.layout) {
-        case "Right":
+        case "text + image":
             return <TextRight contentEntry={contentEntry} />
-        case "Left":
+        case "image + text":
             return <TextLeft contentEntry={contentEntry} />
         default:
             return <TextCenter contentEntry={contentEntry} />

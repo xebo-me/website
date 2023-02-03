@@ -31,8 +31,8 @@ export const TextCenter = (props: ContentProps<TextEntry>) => {
             {contentEntry.fields.body &&
                 <Typography component="div" variant="body1" color="grayText" sx={{
                     lineHeight: 1.75,
-                    columnCount: { xs: 1, sm: 2, md: 3 },
-                    columnGap: 8,
+                    columnCount: { xs: 1, sm: 2, lg: 3 },
+                    columnGap: 6,
                     //columnRule: '1px solid lightgrey'
                 }}>
                     {documentToReactComponents(contentEntry.fields.body)}

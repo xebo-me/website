@@ -13,7 +13,7 @@ export const Section = (props: ContentProps<TextEntry>) => {
     const { contentEntry } = props;
     const navigate = useNavigate();
 
-    console.log(contentEntry)
+    //console.log(contentEntry)
 
     return (
         <Container maxWidth="lg">
