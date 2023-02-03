@@ -4,8 +4,8 @@ import Container from "@mui/material/Container";
 import { Entry } from "contentful";
 
 import HeroBanner from './blocks/HeroBanner';
-import TextBlock from './blocks/TextBlock';
 import Section from './blocks/Section';
+import TextBlock from './blocks/TextBlock';
 import Outline from '@/components/Outline';
 import { ContentProps, AnyEntry, AssemblyEntry } from '@/types';
 
@@ -46,14 +46,10 @@ const Factory = (props: ContentProps<AnyEntry>) => {
     const { contentEntry, detail } = props;
     const id = contentEntry?.sys.contentType.sys.id;
 
-    console.log(id)
-
     if (!id) {
         return <Outline />
     }
-
-    const block = blocks[id];
-    return block({ contentEntry, detail })
+    return blocks[id]({ contentEntry, detail })
 }
 
 export default Renderer;
