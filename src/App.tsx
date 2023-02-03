@@ -1,14 +1,17 @@
-import React, { Suspense } from 'react';
+import React, { lazy, Suspense } from 'react';
 
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Outline from '@/components/Outline';
-import Routes from '@/Routes';
 import { theme } from '@/theme';
 import Viewport from '@/Viewport';
+
+const Registration = lazy(() => import('@/views/Registration'));
+const Contact = lazy(() => import('@/views/Contact'));
+const Content = lazy(() => import('@/views/Content'));
 
 const queryClient = new QueryClient();
 
@@ -21,7 +24,13 @@ export const App = () => {
                 <BrowserRouter>
                     <Suspense fallback={<Outline />}>
                         <Viewport>
-                            <Routes />
+                            <Routes>
+                                <Route path="/" element={<Content />} />
+                                <Route path="/registration" element={<Registration />} />
+                                <Route path="/contact" element={<Contact />} />
+                                <Route path="/:slug" element={<Content />} />
+                                <Route path="/:type/:slug" element={<Content />} />
+                            </Routes>
                         </Viewport>
                     </Suspense>
                 </BrowserRouter >
@@ -30,4 +39,4 @@ export const App = () => {
     )
 }
 
-export default App; 
+export default App;

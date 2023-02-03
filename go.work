@@ -1,0 +1,6 @@
+go 1.20
+
+use (
+	./netlify/functions/contact
+	./netlify/functions/registration
+)

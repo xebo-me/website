@@ -14,7 +14,7 @@ import { Entry, EntryCollection } from "contentful";
 import { useNavigate } from "react-router-dom";
 
 import logo from '@/assets/logo-blue.svg';
-import { fetchContent } from "@/contentful";
+import { fetchContent } from "@/views/Content/contentful";
 import type { MenuEntry, MenuItemEntry } from '@/types';
 
 export const Header = () => {

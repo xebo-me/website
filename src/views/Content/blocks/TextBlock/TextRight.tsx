@@ -8,7 +8,7 @@ import Grid from '@mui/material/Unstable_Grid2';
 
 import type { ContentProps, TextEntry } from '@/types';
 
-const Right = (props: ContentProps<TextEntry>) => {
+export const TextRight = (props: ContentProps<TextEntry>) => {
     const { contentEntry } = props;
 
     return (
@@ -40,4 +40,4 @@ const Right = (props: ContentProps<TextEntry>) => {
         </Container>
     )
 }
-export default Right;
+export default TextRight;

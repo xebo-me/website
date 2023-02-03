@@ -1,3 +1,5 @@
+// import { Block, Document, Inline, Text } from '@contentful/rich-text-types';
+import { Document } from '@contentful/rich-text-types';
 import { Asset, Entry } from "contentful";
 
 export type MenuEntry = {
@@ -29,13 +31,13 @@ export type Column = {
 }
 
 export type TextEntry = {
+    title: string;
+    body: Document;
+    // column: Entry<Column>;
+    image: Asset;
     ctaLabel: string;
     ctaSlug: string;
-    body: string;
-    column: Entry<Column>;
-    image: Asset;
-    headline: string;
-    textDirection: string;
+    layout: string;
 };
 
 export type AssemblyEntry = {
