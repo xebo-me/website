@@ -26,14 +26,14 @@ export const Renderer = (props: ContentProps<AnyEntry>) => {
             {contentEntry?.sys?.contentType.sys.id === 'assembly' &&
                 <>
                     {(contentEntry as Entry<AssemblyEntry>).fields?.blocks.map((block, index) =>
-                        <Container key={index} maxWidth="lg" sx={{ px: { xs: 1, sm: 10, md: 20 }, my: 6 }}>
+                        <Container key={index} maxWidth="xl" sx={{ px: { xs: 1, sm: 10, md: 20 }, my: 6 }}>
                             <Factory contentEntry={block} />
                         </Container>
                     )}
                 </>
             }
             {contentEntry?.sys?.contentType.sys.id !== 'assembly' &&
-                // <Container maxWidth="lg" sx={{ px: { xs: 1, sm: 10, md: 20 }, my: 5 }}>
+                // <Container maxWidth="xl" sx={{ px: { xs: 1, sm: 10, md: 20 }, my: 5 }}>
                 <Factory contentEntry={contentEntry} detail={true} />
                 // </Container>
             }
