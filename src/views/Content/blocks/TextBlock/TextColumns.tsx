@@ -8,12 +8,10 @@ import { useNavigate } from 'react-router-dom';
 
 import type { ContentProps, TextEntry } from '@/types';
 
-export const TextCenter = (props: ContentProps<TextEntry>) => {
+export const TextColumns = (props: ContentProps<TextEntry>) => {
     const { contentEntry } = props;
     const navigate = useNavigate();
-
-    // console.log(contentEntry)
-
+    
     return (
         <>
             {contentEntry.fields?.title &&
@@ -30,7 +28,8 @@ export const TextCenter = (props: ContentProps<TextEntry>) => {
             }
             {contentEntry.fields.body &&
                 <Typography component="div" variant="body1" color="grayText" sx={{
-                    lineHeight: 1.75,
+                    lineHeight: 1.5,
+                    textAlign: 'justify',
                     columnCount: { xs: 1, sm: 2, lg: 3 },
                     columnGap: 6,
                     //columnRule: '1px solid lightgrey'
@@ -47,4 +46,4 @@ export const TextCenter = (props: ContentProps<TextEntry>) => {
     )
 }
 
-export default TextCenter;
+export default TextColumns;

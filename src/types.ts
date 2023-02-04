@@ -33,7 +33,6 @@ export type Column = {
 export type TextEntry = {
     title: string;
     body: Document;
-    // column: Entry<Column>;
     image: Asset;
     ctaLabel: string;
     ctaSlug: string;

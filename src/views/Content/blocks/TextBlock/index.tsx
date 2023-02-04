@@ -1,8 +1,7 @@
 import React from 'react';
 
-import TextCenter from './TextCenter';
-import TextLeft from './TextLeft';
-import TextRight from './TextRight';
+import TextColumns from './TextColumns';
+import TextImage from './TextImage';
 import type { ContentProps, TextEntry } from '@/types';
 
 export const TextBlock = (props: ContentProps<TextEntry>) => {
@@ -10,14 +9,14 @@ export const TextBlock = (props: ContentProps<TextEntry>) => {
 
     // console.log(contentEntry.fields.layout)
 
-    switch (contentEntry.fields.layout) {
-        case "text + image":
-            return <TextRight contentEntry={contentEntry} />
-        case "image + text":
-            return <TextLeft contentEntry={contentEntry} />
-        default:
-            return <TextCenter contentEntry={contentEntry} />
-    }
+    return (
+        <>
+            {contentEntry.fields.layout === "Columns"
+                ? <TextColumns contentEntry={contentEntry} />
+                : <TextImage contentEntry={contentEntry} />
+            }
+        </>
+    );
 }
 
 export default TextBlock;
