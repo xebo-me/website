@@ -2,9 +2,9 @@ import React from 'react';
 
 import TextColumns from './TextColumns';
 import TextImage from './TextImage';
-import type { ContentProps, TextEntry } from '@/types';
+import type { ContentProps, TextBlockEntry } from '@/types';
 
-export const TextBlock = (props: ContentProps<TextEntry>) => {
+export const TextBlock = (props: ContentProps<TextBlockEntry>) => {
     const { contentEntry } = props;
 
     // console.log(contentEntry.fields.layout)

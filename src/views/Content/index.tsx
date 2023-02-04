@@ -5,8 +5,8 @@ import { Entry } from 'contentful';
 import { useParams } from 'react-router-dom';
 
 import { AnyEntry } from '@/types';
-import Renderer from '@/views/Content/Renderer';
 import { fetchContent } from "@/views/Content/contentful";
+import Renderer from '@/views/Content/Renderer';
 
 const NotFound = lazy(() => import('@/views/Content/NotFound'));
 

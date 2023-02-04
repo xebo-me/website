@@ -19,18 +19,15 @@ export type HeroBannerEntry = {
     outlinedButton: string;
 };
 
-export type Column = {
-    name: string;
-    columnImage: Asset;
-    leftColumnTitle: string;
-    leftColumn: string;
-    centerColumnTitle: string;
-    centerColumn: string;
-    rightColumnTitle: string;
-    rightColumn: string;
-}
+export type SectionEntry = {
+    title: string;
+    subtitle: string;
+    body: Document;
+    image: Asset;
+    blocks: Entry<HeroBannerEntry | SectionEntry | TextBlockEntry>[]
+};
 
-export type TextEntry = {
+export type TextBlockEntry = {
     title: string;
     body: Document;
     image: Asset;
@@ -40,10 +37,10 @@ export type TextEntry = {
 };
 
 export type AssemblyEntry = {
-    blocks: Entry<HeroBannerEntry | TextEntry>[]
+    blocks: Entry<HeroBannerEntry | SectionEntry | TextBlockEntry>[]
 };
 
-export type AnyEntry = AssemblyEntry | HeroBannerEntry | TextEntry;
+export type AnyEntry = AssemblyEntry | HeroBannerEntry | SectionEntry | TextBlockEntry;
 
 export type ContentProps<T> = {
     contentEntry: Entry<T>;

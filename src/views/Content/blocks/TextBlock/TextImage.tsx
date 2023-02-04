@@ -4,7 +4,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-import type { ContentProps, TextEntry } from '@/types';
+import type { ContentProps, TextBlockEntry } from '@/types';
 
 const imgsx = {
     pl: 6,
@@ -12,7 +12,7 @@ const imgsx = {
     float: 'right',
 }
 
-export const TextImage = (props: ContentProps<TextEntry>) => {
+export const TextImage = (props: ContentProps<TextBlockEntry>) => {
     const { contentEntry } = props;
 
     // switch image placement

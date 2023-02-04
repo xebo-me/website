@@ -4,14 +4,13 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Button from '@mui/material/Button';
 import Box from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { useNavigate } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
-import type { ContentProps, TextEntry } from '@/types';
+import type { ContentProps, TextBlockEntry } from '@/types';
 
-export const TextColumns = (props: ContentProps<TextEntry>) => {
+export const TextColumns = (props: ContentProps<TextBlockEntry>) => {
     const { contentEntry } = props;
-    const navigate = useNavigate();
-    
+
     return (
         <>
             {contentEntry.fields?.title &&
@@ -38,7 +37,7 @@ export const TextColumns = (props: ContentProps<TextEntry>) => {
                 </Typography>
             }
             {contentEntry.fields.ctaLabel &&
-                <Button onClick={() => navigate(contentEntry.fields.ctaSlug)} variant="contained" sx={{ mt: 4, mb: 4 }}>
+                <Button variant="contained" component={RouterLink} to={contentEntry.fields.ctaSlug} sx={{ mt: 4, mb: 4 }}>
                     {contentEntry.fields.ctaLabel}
                 </Button>
             }

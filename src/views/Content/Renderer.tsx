@@ -33,9 +33,9 @@ export const Renderer = (props: ContentProps<AnyEntry>) => {
                 </>
             }
             {contentEntry?.sys?.contentType.sys.id !== 'assembly' &&
-                <Container maxWidth="lg" sx={{ px: { xs: 1, sm: 10, md: 20 }, my: 5 }}>
-                    <Factory contentEntry={contentEntry} detail={true} />
-                </Container>
+                // <Container maxWidth="lg" sx={{ px: { xs: 1, sm: 10, md: 20 }, my: 5 }}>
+                <Factory contentEntry={contentEntry} detail={true} />
+                // </Container>
             }
         </>
     )
