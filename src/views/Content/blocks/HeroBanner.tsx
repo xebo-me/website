@@ -18,7 +18,7 @@ const HeroBanner = (props: ContentProps<HeroBannerEntry>) => {
                 loading="lazy"
                 sx={{
                     float: 'right',
-                    //maxWidth: 'calc(50vh - 20%)',
+                    // maxWidth: 'calc(50vh - 20%)',
                     maxWidth: '45%',
                     height: 'auto',
                     pl: 4,
@@ -28,10 +28,10 @@ const HeroBanner = (props: ContentProps<HeroBannerEntry>) => {
             <Typography gutterBottom variant="h1" sx={{ textAlign: { xs: 'center', sm: 'left', md: 'left' } }}>
                 {contentEntry.fields.headline}
             </Typography>
-            <Typography variant="subtitle2" sx={{ textAlign: { xs: 'center', sm: 'left', md: 'left' } }}>
+            <Typography variant="subtitle2" sx={{ textAlign: { xs: 'center', sm: 'left', md: 'left' }, px: { xs: 2, sm: 0, md: 0 } }}>
                 {contentEntry?.fields.subheader}
             </Typography>
-            <Stack direction="row" spacing={2} sx={{ pt: 2 }}>
+            <Stack direction="row" spacing={2} sx={{ pt: 2, justifyContent: { xs: 'center', sm: 'flex-start' }, alignItems: 'center' }}>
                 {contentEntry.fields.containedButton &&
                     <Button component={RouterLink} to="/registration" color="secondary" variant="contained">
                         {contentEntry.fields.containedButton}
