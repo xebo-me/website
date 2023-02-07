@@ -6,24 +6,28 @@ import Typography from '@mui/material/Typography';
 
 import type { ContentProps, TextBlockEntry } from '@/types';
 
-const imgsx = {
-    pl: 4,
-    pr: 0,
-    float: 'right',
-}
-
 export const TextImage = (props: ContentProps<TextBlockEntry>) => {
     const { contentEntry } = props;
 
+    let imgsx;
+
     // switch image placement
     if (contentEntry.fields.layout === "ImageText") {
-        imgsx.pl = 0;
-        imgsx.pr = 6;
-        imgsx.float = 'left';
+        imgsx = {
+            pl: 0,
+            pr: 6,
+            float: 'left'
+        }
+    } else {
+        imgsx = {
+            pl: 4,
+            pr: 0,
+            float: 'right',
+        }
     }
 
     return (
-        <Box sx={{ width: '100%', px: 4 }}>
+        <>
             {contentEntry.fields.image?.fields.file.url &&
                 <Box component="img"
                     src={contentEntry.fields.image.fields.file.url}
@@ -41,7 +45,7 @@ export const TextImage = (props: ContentProps<TextBlockEntry>) => {
             }}>
                 {documentToReactComponents(contentEntry.fields.body)}
             </Typography>
-        </Box>
+        </>
     )
 }
 export default TextImage;
