@@ -26,7 +26,7 @@ export const Content = () => {
             {res.data?.items[0]?.sys?.contentType.sys.id === 'assembly' &&
                 <>
                     {(res.data?.items[0] as Entry<AssemblyEntry>).fields?.blocks.map((block, index) =>
-                        <Container key={index} maxWidth="lg" sx={{ px: { xs: 1, sm: 10, md: 20 }, my: 6 }}>
+                        <Container key={index} maxWidth="lg" sx={{ px: { xs: 1, sm: 10, md: 20 }, my: 10 }}>
                             <ContentBlock contentEntry={block} />
                         </Container>
                     )}
