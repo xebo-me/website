@@ -12,7 +12,7 @@ export const Section = (props: ContentProps<SectionEntry>) => {
     return (
         <>
             {contentEntry.fields?.title &&
-                <Typography align="center" variant="h2" >
+                <Typography align="center" variant="h2">
                     {contentEntry.fields?.title}
                 </Typography>
             }
