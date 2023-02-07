@@ -4,7 +4,7 @@ import Box from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
 import type { ContentProps, SectionEntry } from '@/types';
-import Renderer from '@/views/Content/Renderer';
+import ContentBlock from '@/views/Content/ContentBlock';
 
 export const Section = (props: ContentProps<SectionEntry>) => {
     const { contentEntry } = props;
@@ -29,7 +29,7 @@ export const Section = (props: ContentProps<SectionEntry>) => {
                 />
             }
             {contentEntry.fields?.blocks?.map((entry, index) =>
-                <Renderer key={index} contentEntry={entry} />
+                <ContentBlock key={index} contentEntry={entry} />
             )}
         </>
     )

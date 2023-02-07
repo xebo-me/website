@@ -1,5 +1,8 @@
 import { QueryFunctionContext } from "@tanstack/react-query";
 import { EntryCollection, createClient, ContentfulClientApi } from 'contentful';
+import { Entry } from 'contentful';
+
+import { AnyEntry } from '@/types';
 
 const spaceId: string = import.meta.env.VITE_CONTENTFUL_SPACE_ID;
 const deliveryApiToken: string = import.meta.env.VITE_DELIVERY_TOKEN;
@@ -12,6 +15,10 @@ const client: ContentfulClientApi = createClient({
     host: 'https://cdn.contentful.com',
     removeUnresolved: true
 })
+
+export type Response = {
+    data?: { items: Entry<AnyEntry>[] }
+}
 
 export const fetchContent = async ({ queryKey }: QueryFunctionContext): Promise<EntryCollection<unknown>> => {
     const [, type, slug, include] = queryKey;
