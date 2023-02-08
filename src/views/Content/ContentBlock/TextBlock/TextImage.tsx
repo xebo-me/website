@@ -14,7 +14,7 @@ export const TextImage = (props: ContentProps<TextBlockEntry>) => {
 
     // image placement
     const imgsx = (textImage: boolean) => {
-        return textImage ? { pl: 4, pr: 0, float: 'right' } : { pl: 0, pr: 4, float: 'left' }
+        return textImage ? { pl: 6, pr: 0, float: 'right' } : { pl: 0, pr: 6, float: 'left' }
     }
 
     const options = {
