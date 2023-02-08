@@ -70,7 +70,7 @@ export const TextImage = (props: ContentProps<TextBlockEntry>) => {
             {documentToReactComponents(contentEntry.fields.body, options)}
             {contentEntry.fields.ctaLabel &&
                 <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    <Button variant="text" component={RouterLink} to={contentEntry.fields.ctaSlug} sx={{ mt: 4, mb: 4 }}>
+                    <Button variant="text" component={RouterLink} to={contentEntry.fields.ctaSlug} color="secondary" sx={{ mt: 4, mb: 4 }}>
                         {contentEntry.fields.ctaLabel}
                     </Button>
                 </Box>

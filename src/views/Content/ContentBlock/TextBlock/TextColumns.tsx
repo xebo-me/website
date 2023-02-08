@@ -57,9 +57,11 @@ export const TextColumns = (props: ContentProps<TextBlockEntry>) => {
                 </Typography>
             }
             {contentEntry.fields.ctaLabel &&
-                <Button variant="contained" component={RouterLink} to={contentEntry.fields.ctaSlug} sx={{ mt: 4, mb: 4 }}>
-                    {contentEntry.fields.ctaLabel}
-                </Button>
+                <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+                    <Button variant="text" component={RouterLink} to={contentEntry.fields.ctaSlug} color="secondary" sx={{ mt: 4, mb: 4 }}>
+                        {contentEntry.fields.ctaLabel}
+                    </Button>
+                </Box>
             }
         </>
     )
