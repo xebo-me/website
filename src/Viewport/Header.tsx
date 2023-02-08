@@ -14,15 +14,15 @@ import { Entry, EntryCollection } from "contentful";
 import { useNavigate } from "react-router-dom";
 
 import logo from '@/assets/logo-blue.svg';
-import { fetchContent } from "@/views/Content/contentful";
 import type { MenuEntry, MenuItemEntry } from '@/types';
+import { fetchContent } from "@/views/Content/contentful";
 
 export const Header = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const navigate = useNavigate();
 
-    const res = useQuery(['menu', 'assembly', 'site-root', 1], fetchContent);
+    const res = useQuery(['menu', 'assembly', 'navigation', 1], fetchContent);
     const menuEntry = res.data as EntryCollection<MenuEntry>
     const allItems = menuEntry?.items[0].fields.blocks as Entry<MenuItemEntry>[]
     const menuItems = allItems?.filter(item => item.fields.slug !== 'home')
