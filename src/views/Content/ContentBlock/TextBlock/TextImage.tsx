@@ -12,21 +12,9 @@ import type { ContentProps, TextBlockEntry } from '@/types';
 export const TextImage = (props: ContentProps<TextBlockEntry>) => {
     const { contentEntry } = props;
 
-    let imgsx;
-
-    // switch image placement
-    if (contentEntry.fields.layout === "ImageText") {
-        imgsx = {
-            pl: 0,
-            pr: 6,
-            float: 'left'
-        }
-    } else {
-        imgsx = {
-            pl: 4,
-            pr: 0,
-            float: 'right',
-        }
+    // image placement
+    const imgsx = (textImage: boolean) => {
+        return textImage ? { pl: 4, pr: 0, float: 'right' } : { pl: 0, pr: 4, float: 'left' }
     }
 
     const options = {
@@ -55,11 +43,9 @@ export const TextImage = (props: ContentProps<TextBlockEntry>) => {
                     sx={{
                         objectFit: 'contain',
                         maxWidth: '50%',
-                        float: imgsx.float,
                         display: { xs: 'none', sm: 'block' },
-                        pl: imgsx.pl,
-                        pr: imgsx.pr,
-                        pb: 2
+                        pb: 2,
+                        ...imgsx(contentEntry.fields.layout === "TextImage")
                     }}
                     alt={contentEntry.fields.image.fields.title}
                 />
