@@ -34,7 +34,8 @@ export const TextImage = (props: ContentProps<TextBlockEntry>) => {
                     <Typography variant="body1" color="grayText" align='right' sx={{
                         lineHeight: 1.75,
                         textAlign: 'justify',
-                        marginBlockStart: 0
+                        marginBlockStart: 0,
+                        marginBlockEnd: 0
                     }}>
                         {children}
                     </Typography>
@@ -43,14 +44,21 @@ export const TextImage = (props: ContentProps<TextBlockEntry>) => {
         }
     };
 
-
     return (
         <>
             {contentEntry.fields.image?.fields.file.url &&
                 <Box component="img"
                     src={contentEntry.fields.image.fields.file.url}
                     loading="lazy"
-                    sx={{ objectFit: 'contain', maxWidth: '50%', float: imgsx.float, pl: imgsx.pl, pr: imgsx.pr, pb: 2 }}
+                    sx={{
+                        objectFit: 'contain',
+                        maxWidth: '50%',
+                        float: imgsx.float,
+                        display: { xs: 'none', sm: 'block' },
+                        pl: imgsx.pl,
+                        pr: imgsx.pr,
+                        pb: 2
+                    }}
                     alt={contentEntry.fields.image.fields.title}
                 />
             }

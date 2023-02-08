@@ -21,7 +21,8 @@ export const TextColumns = (props: ContentProps<TextBlockEntry>) => {
                     <Typography variant="body1" color="grayText" align='right' sx={{
                         lineHeight: 1.75,
                         textAlign: 'justify',
-                        marginBlockStart: 0
+                        marginBlockStart: 0,
+                        marginBlockEnd: 0
                     }}>
                         {children}
                     </Typography>
@@ -39,7 +40,7 @@ export const TextColumns = (props: ContentProps<TextBlockEntry>) => {
             }
             {contentEntry.fields.image?.fields.file.url &&
                 <Box component="img"
-                    sx={{ maxWidth: '20%', height: 'auto' }}
+                    sx={{ maxWidth: '20%', height: 'auto', display: { xs: 'none' } }}
                     src={contentEntry.fields.image.fields.file.url}
                     alt={contentEntry.fields.image.fields.title}
                 />
