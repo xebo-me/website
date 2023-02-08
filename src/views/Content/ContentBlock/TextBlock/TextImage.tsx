@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { BLOCKS } from '@contentful/rich-text-types';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
@@ -26,6 +27,23 @@ export const TextImage = (props: ContentProps<TextBlockEntry>) => {
         }
     }
 
+    const options = {
+        renderNode: {
+            [BLOCKS.PARAGRAPH]: (_: object, children: ReactNode) => {
+                return (
+                    <Typography variant="body1" color="grayText" align='right' sx={{
+                        lineHeight: 1.75,
+                        textAlign: 'justify',
+                        marginBlockStart: 0
+                    }}>
+                        {children}
+                    </Typography>
+                )
+            }
+        }
+    };
+
+
     return (
         <>
             {contentEntry.fields.image?.fields.file.url &&
@@ -36,15 +54,10 @@ export const TextImage = (props: ContentProps<TextBlockEntry>) => {
                     alt={contentEntry.fields.image.fields.title}
                 />
             }
-            <Typography align="left" variant="h3">
+            <Typography align="left" variant="h3" gutterBottom>
                 {contentEntry.fields.title}
             </Typography>
-            <Typography variant="body1" component="div" color="grayText" align='right' sx={{
-                lineHeight: 1.75,
-                textAlign: 'justify'
-            }}>
-                {documentToReactComponents(contentEntry.fields.body)}
-            </Typography>
+            {documentToReactComponents(contentEntry.fields.body, options)}
         </>
     )
 }

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { BLOCKS } from '@contentful/rich-text-types';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
@@ -8,8 +9,26 @@ import { Link as RouterLink } from 'react-router-dom';
 
 import type { ContentProps, TextBlockEntry } from '@/types';
 
+
 export const TextColumns = (props: ContentProps<TextBlockEntry>) => {
     const { contentEntry } = props;
+
+    const options = {
+        renderNode: {
+            [BLOCKS.PARAGRAPH]: (_: object, children: ReactNode) => {
+
+                return (
+                    <Typography variant="body1" color="grayText" align='right' sx={{
+                        lineHeight: 1.75,
+                        textAlign: 'justify',
+                        marginBlockStart: 0
+                    }}>
+                        {children}
+                    </Typography>
+                )
+            }
+        }
+    };
 
     return (
         <>
@@ -33,7 +52,7 @@ export const TextColumns = (props: ContentProps<TextBlockEntry>) => {
                     columnGap: 6,
                     //columnRule: '1px solid lightgrey'
                 }}>
-                    {documentToReactComponents(contentEntry.fields.body)}
+                    {documentToReactComponents(contentEntry.fields.body, options)}
                 </Typography>
             }
             {contentEntry.fields.ctaLabel &&
