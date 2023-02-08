@@ -3,7 +3,9 @@ import React, { ReactNode } from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Link as RouterLink } from 'react-router-dom';
 
 import type { ContentProps, TextBlockEntry } from '@/types';
 
@@ -66,6 +68,13 @@ export const TextImage = (props: ContentProps<TextBlockEntry>) => {
                 {contentEntry.fields.title}
             </Typography>
             {documentToReactComponents(contentEntry.fields.body, options)}
+            {contentEntry.fields.ctaLabel &&
+                <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+                    <Button variant="text" component={RouterLink} to={contentEntry.fields.ctaSlug} sx={{ mt: 4, mb: 4 }}>
+                        {contentEntry.fields.ctaLabel}
+                    </Button>
+                </Box>
+            }
         </>
     )
 }
