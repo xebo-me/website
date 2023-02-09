@@ -4,14 +4,10 @@ import { Entry } from 'contentful';
 
 import { AnyEntry } from '@/types';
 
-const spaceId: string = import.meta.env.VITE_CONTENTFUL_SPACE_ID;
-const deliveryApiToken: string = import.meta.env.VITE_DELIVERY_TOKEN;
-const environment: string = import.meta.env.VITE_ENVIRONMENT;
-
 const client: ContentfulClientApi = createClient({
-    space: spaceId,
-    environment: environment,
-    accessToken: deliveryApiToken,
+    space: import.meta.env.VITE_CONTENTFUL_SPACE_I,
+    environment: import.meta.env.VITE_ENVIRONMENT,
+    accessToken: import.meta.env.VITE_DELIVERY_TOKEN,
     host: 'https://cdn.contentful.com',
     removeUnresolved: true
 })
