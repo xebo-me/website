@@ -17,6 +17,10 @@ export const TextImage = (props: ContentProps<TextBlockEntry>) => {
         return textImage ? { pl: 6, pr: 0, float: 'right' } : { pl: 0, pr: 6, float: 'left' }
     }
 
+    const ctasx = (textImage: boolean) => { 
+        return textImage ? { justifyContent: 'flex-start' } : { justifyContent: 'flex-end' }
+    }
+
     const options = {
         renderNode: {
             [BLOCKS.PARAGRAPH]: (_: object, children: ReactNode) => {
@@ -55,7 +59,7 @@ export const TextImage = (props: ContentProps<TextBlockEntry>) => {
             </Typography>
             {documentToReactComponents(contentEntry.fields.body, options)}
             {contentEntry.fields.ctaLabel &&
-                <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+                <Box sx={{ display: 'flex', ...ctasx(contentEntry.fields.layout === "TextImage") }}>
                     <Button variant="text" component={RouterLink} to={contentEntry.fields.ctaSlug} color="secondary" sx={{ mt: 4, mb: 4 }}>
                         {contentEntry.fields.ctaLabel}
                     </Button>
