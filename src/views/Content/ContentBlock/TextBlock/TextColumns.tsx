@@ -12,7 +12,7 @@ import type { ContentProps, TextBlockEntry } from '@/types';
 
 export const TextColumns = (props: ContentProps<TextBlockEntry>) => {
     const { contentEntry } = props;
-
+    
     const options = {
         renderNode: {
             [BLOCKS.PARAGRAPH]: (_: object, children: ReactNode) => {
@@ -56,10 +56,10 @@ export const TextColumns = (props: ContentProps<TextBlockEntry>) => {
                     {documentToReactComponents(contentEntry.fields.body, options)}
                 </Typography>
             }
-            {contentEntry.fields.ctaLabel &&
-                <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    <Button variant="text" component={RouterLink} to={contentEntry.fields.ctaSlug} color="secondary" sx={{ mt: 4, mb: 4 }}>
-                        {contentEntry.fields.ctaLabel}
+            {contentEntry.fields?.ctaLabel && contentEntry.fields?.ctaUrl &&
+                <Box sx={{ display: 'flex' }}>
+                    <Button variant="contained" component={RouterLink} to={contentEntry.fields?.ctaUrl} color="secondary" sx={{ mt: 4, mb: 4 }}>
+                        {contentEntry.fields?.ctaLabel}
                     </Button>
                 </Box>
             }

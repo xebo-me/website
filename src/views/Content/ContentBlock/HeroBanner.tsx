@@ -32,14 +32,14 @@ const HeroBanner = (props: ContentProps<HeroBannerEntry>) => {
                 {contentEntry?.fields.subheader}
             </Typography>
             <Stack direction="row" spacing={2} sx={{ pt: 2, justifyContent: { xs: 'center', sm: 'flex-start' }, alignItems: 'center' }}>
-                {contentEntry.fields.containedButton &&
-                    <Button component={RouterLink} to="/registration" color="secondary" variant="contained">
-                        {contentEntry.fields.containedButton}
+                {contentEntry.fields?.primaryCtaLabel && contentEntry.fields?.primaryCtaUrl &&
+                    <Button component={RouterLink} to={contentEntry.fields?.primaryCtaUrl} color="secondary" variant="contained">
+                        {contentEntry.fields?.primaryCtaLabel}
                     </Button>
                 }
-                {contentEntry.fields.outlinedButton &&
-                    <Button component={RouterLink} to="/contact" color="secondary" variant="outlined">
-                        {contentEntry.fields.outlinedButton}
+                {contentEntry.fields?.secondaryCtaLabel && contentEntry.fields?.secondaryCtaUrl &&
+                    <Button component={RouterLink} to={contentEntry.fields?.secondaryCtaUrl} color="secondary" variant="outlined">
+                        {contentEntry.fields?.secondaryCtaLabel}
                     </Button>
                 }
             </Stack>

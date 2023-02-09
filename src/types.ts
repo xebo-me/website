@@ -15,8 +15,10 @@ export type HeroBannerEntry = {
     headline: string;
     subheader: string;
     heroImage: Asset;
-    containedButton: string;
-    outlinedButton: string;
+    primaryCtaLabel: string;
+    primaryCtaUrl: string;
+    secondaryCtaLabel: string;
+    secondaryCtaUrl: string;
 };
 
 export type SectionEntry = {
@@ -32,7 +34,7 @@ export type TextBlockEntry = {
     body: Document;
     image: Asset;
     ctaLabel: string;
-    ctaSlug: string;
+    ctaUrl: string;
     layout: string;
 };
 

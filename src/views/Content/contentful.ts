@@ -5,10 +5,10 @@ import { Entry } from 'contentful';
 import { AnyEntry } from '@/types';
 
 const client: ContentfulClientApi = createClient({
-    space: import.meta.env.VITE_CONTENTFUL_SPACE_I,
+    space: import.meta.env.VITE_CONTENTFUL_SPACE_ID,
     environment: import.meta.env.VITE_ENVIRONMENT,
     accessToken: import.meta.env.VITE_DELIVERY_TOKEN,
-    host: 'https://cdn.contentful.com',
+    host: 'cdn.contentful.com',
     removeUnresolved: true
 })
 
