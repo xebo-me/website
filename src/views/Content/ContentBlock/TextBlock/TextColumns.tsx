@@ -12,7 +12,7 @@ import type { ContentProps, TextBlockEntry } from '@/types';
 
 export const TextColumns = (props: ContentProps<TextBlockEntry>) => {
     const { contentEntry } = props;
-    
+    console.log(contentEntry)
     const options = {
         renderNode: {
             [BLOCKS.PARAGRAPH]: (_: object, children: ReactNode) => {
@@ -40,7 +40,7 @@ export const TextColumns = (props: ContentProps<TextBlockEntry>) => {
             }
             {contentEntry.fields.image?.fields.file.url &&
                 <Box component="img"
-                    sx={{ maxWidth: '20%', height: 'auto', display: { xs: 'none' } }}
+                    sx={{ maxWidth: '50%', height: 'auto', display: { xs: 'none', md: 'flex' }, mx: 'auto' }}
                     src={contentEntry.fields.image.fields.file.url}
                     alt={contentEntry.fields.image.fields.title}
                 />
