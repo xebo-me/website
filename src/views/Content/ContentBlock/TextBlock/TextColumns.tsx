@@ -49,7 +49,7 @@ export const TextColumns = (props: ContentProps<TextBlockEntry>) => {
                 <Typography component="div" variant="body1" color="grayText" sx={{
                     lineHeight: 1.5,
                     textAlign: 'justify',
-                    columnCount: { xs: 1, sm: 2, lg: 3 },
+                    columnCount: { xs: 1, sm: 2 },
                     columnGap: 6,
                     //columnRule: '1px solid lightgrey'
                 }}>
