@@ -12,7 +12,7 @@ import type { ContentProps, TextBlockEntry } from '@/types';
 
 export const TextColumns = (props: ContentProps<TextBlockEntry>) => {
     const { contentEntry } = props;
-    console.log(contentEntry)
+
     const options = {
         renderNode: {
             [BLOCKS.PARAGRAPH]: (_: object, children: ReactNode) => {
