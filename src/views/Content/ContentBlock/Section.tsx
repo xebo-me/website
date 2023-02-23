@@ -23,7 +23,7 @@ export const Section = (props: ContentProps<SectionEntry>) => {
             }
             {contentEntry.fields.image?.fields.file.url &&
                 <Box component="img"
-                    sx={{ maxWidth: '100%', height: 'auto' }}
+                    sx={{ maxWidth: '100%', height: 'auto', py: 6 }}
                     src={contentEntry.fields.image.fields.file.url}
                     alt={contentEntry.fields.image.fields.title}
                 />
